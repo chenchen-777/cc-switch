@@ -43,8 +43,8 @@ jobs:
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
         with:
-          tagName: 777-v3.20.1-777.2
-          releaseName: CC Switch 777 v3.20.1-777.2
+          tagName: ${{ github.ref_name }}
+          releaseName: CC Switch 777 ${{ github.ref_name }}
           releaseBody: 'Based on upstream v3.20.1. Removes partner promotion text, sponsorship badges and priority, and referral tracking. Custom updater source. Application/MSI version 3.20.7772. macOS DMG is universal (Apple and Intel).'
           releaseDraft: true
           prerelease: false
