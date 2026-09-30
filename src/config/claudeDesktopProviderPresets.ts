@@ -156,7 +156,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   // ===== 赞助商预设：文件顺序 = 应用内展示顺序，与 README 赞助商表对齐 =====
   {
     name: "Kimi",
-    websiteUrl: "https://platform.kimi.com/",
+    websiteUrl: "https://platform.kimi.com",
     category: "cn_official",
     baseUrl: "https://api.moonshot.cn/anthropic",
     mode: "proxy",
@@ -182,7 +182,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "PackyCode",
-    websiteUrl: "https://www.packyapi.ai/",
+    websiteUrl: "https://www.packyapi.ai",
     apiKeyUrl: "https://www.packyapi.ai/register",
     category: "third_party",
     baseUrl: "https://www.packyapi.ai",
@@ -199,7 +199,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "ZetaAPI",
-    websiteUrl: "https://zetaapi.ai/",
+    websiteUrl: "https://zetaapi.ai",
     apiKeyUrl: "https://zetaapi.ai/go/u117",
     category: "aggregator",
     baseUrl: "https://api.zetaapi.ai",
@@ -210,7 +210,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "APINebula",
-    websiteUrl: "https://apinebula.ai/",
+    websiteUrl: "https://apinebula.ai",
     apiKeyUrl: "https://apinebula.ai/VjM74M",
     category: "third_party",
     baseUrl: "https://apinebula.ai",
@@ -222,7 +222,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "AICodeMirror",
-    websiteUrl: "https://www.aicodemirror.ai/",
+    websiteUrl: "https://www.aicodemirror.ai",
     apiKeyUrl: "https://www.aicodemirror.ai/register",
     category: "third_party",
     baseUrl: "https://api.aicodemirror.ai/api/claudecode",
@@ -235,8 +235,8 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "PatewayAI",
-    websiteUrl: "https://pateway.ai/",
-    apiKeyUrl: "https://pateway.ai/?ch=etzpm8#/",
+    websiteUrl: "https://pateway.ai",
+    apiKeyUrl: "https://pateway.ai",
     category: "third_party",
     baseUrl: "https://api.pateway.ai",
     mode: "direct",
@@ -246,9 +246,8 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "FennoAI",
-    websiteUrl: "https://api.fenno.ai/",
-    apiKeyUrl:
-      "https://api.fenno.ai/register?redirect=%2Fpurchase%3Ftab%3Dsubscription%26group%3D16",
+    websiteUrl: "https://api.fenno.ai",
+    apiKeyUrl: "https://api.fenno.ai/register",
     category: "aggregator",
     baseUrl: "https://api.fenno.ai",
     mode: "direct",
@@ -258,7 +257,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "RunAPI",
-    websiteUrl: "https://runapi.host/",
+    websiteUrl: "https://runapi.host",
     apiKeyUrl: "https://runapi.host/register",
     category: "aggregator",
     baseUrl: "https://runapi.host",
@@ -271,8 +270,8 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   {
     name: "Shengsuanyun",
     nameKey: "providerForm.presets.shengsuanyun",
-    websiteUrl: "https://www.shengsuanyun.com/?from=CH_4HHXMRYF",
-    apiKeyUrl: "https://www.shengsuanyun.com/?from=CH_4HHXMRYF",
+    websiteUrl: "https://www.shengsuanyun.com",
+    apiKeyUrl: "https://www.shengsuanyun.com",
     category: "aggregator",
     baseUrl: "https://router.shengsuanyun.com/api",
     mode: "direct",
@@ -286,8 +285,8 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "AIGoCode",
-    websiteUrl: "https://aigocode.app/",
-    apiKeyUrl: "https://aigocode.app/invite/CC-SWITCH",
+    websiteUrl: "https://aigocode.app",
+    apiKeyUrl: "https://aigocode.app",
     category: "third_party",
     baseUrl: "https://api.aigocode.app",
     mode: "direct",
@@ -312,7 +311,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "AICoding",
-    websiteUrl: "https://aicoding.inc/",
+    websiteUrl: "https://aicoding.inc",
     apiKeyUrl: "https://aicoding.inc/i/CCSWITCH",
     category: "third_party",
     baseUrl: "https://api.aicoding.inc",
@@ -325,7 +324,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "SubRouter",
-    websiteUrl: "https://subrouter.ai/",
+    websiteUrl: "https://subrouter.ai",
     apiKeyUrl: "https://subrouter.ai/register",
     category: "aggregator",
     baseUrl: "https://subrouter.ai",
@@ -336,7 +335,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "APIKEY.FUN",
-    websiteUrl: "https://apikey.fun/",
+    websiteUrl: "https://apikey.fun",
     apiKeyUrl: "https://apikey.fun/register",
     category: "third_party",
     baseUrl: "https://api.apikey.fun",
@@ -348,7 +347,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "ClaudeAPI",
-    websiteUrl: "https://www.apito.ai/",
+    websiteUrl: "https://www.apito.ai",
     apiKeyUrl: "https://console.apito.ai/agent/register/pQBql2buaqiX3dDS",
     category: "aggregator",
     baseUrl: "https://gw.apito.ai",
@@ -359,7 +358,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "Code0",
-    websiteUrl: "https://code0.ai/",
+    websiteUrl: "https://code0.ai",
     apiKeyUrl: "https://code0.ai/agent/register/B2XHxGjGmRvqgznY",
     category: "aggregator",
     baseUrl: "https://code0.ai",
@@ -370,8 +369,8 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "TeamoRouter",
-    websiteUrl: "https://teamorouter.cn/",
-    apiKeyUrl: "https://teamorouter.cn/",
+    websiteUrl: "https://teamorouter.cn",
+    apiKeyUrl: "https://teamorouter.cn",
     category: "aggregator",
     baseUrl: "https://api.teamorouter.cn",
     mode: "direct",
@@ -385,8 +384,8 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "PPIO",
-    websiteUrl: "https://ppio.com/",
-    apiKeyUrl: "https://ppio.com/activity/ccswitch",
+    websiteUrl: "https://ppio.com",
+    apiKeyUrl: "https://ppio.com",
     category: "aggregator",
     baseUrl: "https://api.ppio.com/anthropic",
     mode: "proxy",
@@ -403,7 +402,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "ClaudeCN",
-    websiteUrl: "https://claudecn.top/",
+    websiteUrl: "https://claudecn.top",
     apiKeyUrl: "https://claudecn.ai/register",
     category: "third_party",
     baseUrl: "https://claudecn.top",
@@ -414,10 +413,8 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "火山 Agent Plan",
-    websiteUrl:
-      "https://www.volcengine.com/activity/agentplan?ac=MMAP8JTTCAQ2&rc=6J6FV5N2",
-    apiKeyUrl:
-      "https://www.volcengine.com/activity/agentplan?ac=MMAP8JTTCAQ2&rc=6J6FV5N2",
+    websiteUrl: "https://www.volcengine.com",
+    apiKeyUrl: "https://www.volcengine.com",
     category: "cn_official",
     baseUrl: "https://ark.cn-beijing.volces.com/api/plan",
     mode: "proxy",
@@ -432,10 +429,8 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "火山 Coding Plan",
-    websiteUrl:
-      "https://www.volcengine.com/activity/codingplan?ac=MMAP8JTTCAQ2&rc=6J6FV5N2",
-    apiKeyUrl:
-      "https://www.volcengine.com/activity/codingplan?ac=MMAP8JTTCAQ2&rc=6J6FV5N2",
+    websiteUrl: "https://www.volcengine.com",
+    apiKeyUrl: "https://www.volcengine.com",
     category: "cn_official",
     baseUrl: "https://ark.cn-beijing.volces.com/api/coding",
     mode: "proxy",
@@ -467,9 +462,9 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   {
     name: "DouBaoSeed",
     websiteUrl:
-      "https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey?apikey=%7B%7D",
+      "https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey",
     apiKeyUrl:
-      "https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey?apikey=%7B%7D",
+      "https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey",
     category: "cn_official",
     baseUrl: "https://ark.cn-beijing.volces.com/api/compatible",
     mode: "proxy",
@@ -484,7 +479,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "SiliconFlow",
-    websiteUrl: "https://siliconflow.cn/",
+    websiteUrl: "https://siliconflow.cn",
     apiKeyUrl: "https://cloud.siliconflow.cn/i/YflgU2Ve",
     category: "aggregator",
     baseUrl: "https://api.siliconflow.cn",
@@ -500,7 +495,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "SiliconFlow en",
-    websiteUrl: "https://siliconflow.com/",
+    websiteUrl: "https://siliconflow.com",
     apiKeyUrl: "https://cloud.siliconflow.cn/i/YflgU2Ve",
     category: "aggregator",
     baseUrl: "https://api.siliconflow.com",
@@ -516,7 +511,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "A6API",
-    websiteUrl: "https://www.a6api.com/",
+    websiteUrl: "https://www.a6api.com",
     apiKeyUrl: "https://a6api.com/register",
     category: "aggregator",
     baseUrl: "https://api.a6api.com",
@@ -540,9 +535,8 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   {
     name: "Compshare",
     nameKey: "providerForm.presets.ucloud",
-    websiteUrl: "https://www.compshare.cn/",
-    apiKeyUrl:
-      "https://www.compshare.cn/coding-plan?ytag=GPU_YY_YX_git_cc-switch",
+    websiteUrl: "https://www.compshare.cn",
+    apiKeyUrl: "https://www.compshare.cn/coding-plan",
     category: "aggregator",
     baseUrl: "https://api.modelverse.cn",
     mode: "direct",
@@ -555,9 +549,8 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   {
     name: "Compshare Coding Plan",
     nameKey: "providerForm.presets.ucloudCoding",
-    websiteUrl: "https://www.compshare.cn/",
-    apiKeyUrl:
-      "https://www.compshare.cn/coding-plan?ytag=GPU_YY_YX_git_cc-switch",
+    websiteUrl: "https://www.compshare.cn",
+    apiKeyUrl: "https://www.compshare.cn/coding-plan",
     category: "aggregator",
     baseUrl: "https://cp.compshare.cn",
     mode: "direct",
@@ -569,7 +562,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "CCSub",
-    websiteUrl: "https://www.ccsub.net/",
+    websiteUrl: "https://www.ccsub.net",
     apiKeyUrl: "https://www.ccsub.net/register",
     category: "aggregator",
     baseUrl: "https://www.ccsub.net",
@@ -580,7 +573,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "SSSAiCode",
-    websiteUrl: "https://sssaicodeapi.com/",
+    websiteUrl: "https://sssaicodeapi.com",
     apiKeyUrl: "https://sssaicodeapi.com/register",
     category: "third_party",
     baseUrl: "https://node-hk.sssaicodeapi.com/api",
@@ -597,7 +590,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "Micu",
-    websiteUrl: "https://www.micuapi.ai/",
+    websiteUrl: "https://www.micuapi.ai",
     apiKeyUrl: "https://www.micuapi.ai/register",
     category: "third_party",
     baseUrl: "https://www.micuapi.ai",
@@ -610,7 +603,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "RightCode",
-    websiteUrl: "https://www.rightapi.ai/",
+    websiteUrl: "https://www.rightapi.ai",
     apiKeyUrl: "https://www.rightapi.ai/register",
     category: "third_party",
     baseUrl: "https://www.rightapi.ai/claude",
@@ -622,8 +615,8 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "ETok.ai",
-    websiteUrl: "https://etok.ai/",
-    apiKeyUrl: "https://etok.ai/",
+    websiteUrl: "https://etok.ai",
+    apiKeyUrl: "https://etok.ai",
     category: "third_party",
     baseUrl: "https://api.etok.ai",
     mode: "direct",
@@ -634,8 +627,8 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "Cubence",
-    websiteUrl: "https://cubence.com/",
-    apiKeyUrl: "https://cubence.com/signup?code=CCSWITCH&source=ccs",
+    websiteUrl: "https://cubence.com",
+    apiKeyUrl: "https://cubence.com/signup",
     category: "third_party",
     baseUrl: "https://api.cubence.com",
     mode: "direct",
@@ -652,7 +645,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "CrazyRouter",
-    websiteUrl: "https://www.crazyrouter.com/",
+    websiteUrl: "https://www.crazyrouter.com",
     apiKeyUrl: "https://www.crazyrouter.com/register",
     category: "third_party",
     baseUrl: "https://cn.crazyrouter.com",
@@ -665,8 +658,8 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "DMXAPI",
-    websiteUrl: "https://www.dmxapi.cn/",
-    apiKeyUrl: "https://www.dmxapi.cn/",
+    websiteUrl: "https://www.dmxapi.cn",
+    apiKeyUrl: "https://www.dmxapi.cn",
     category: "aggregator",
     baseUrl: "https://www.dmxapi.cn",
     mode: "direct",
@@ -676,7 +669,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "SudoCode.chat",
-    websiteUrl: "https://sudocode.chat/",
+    websiteUrl: "https://sudocode.chat",
     apiKeyUrl: "https://sudocode.chat/sign-up",
     category: "third_party",
     baseUrl: "https://api.sudocode.chat",
@@ -688,8 +681,8 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "SudoCode.us",
-    websiteUrl: "https://sudocode.us/",
-    apiKeyUrl: "https://sudocode.us/",
+    websiteUrl: "https://sudocode.us",
+    apiKeyUrl: "https://sudocode.us",
     category: "third_party",
     baseUrl: "https://sudocode.us",
     mode: "direct",
@@ -700,7 +693,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "XycAi",
-    websiteUrl: "https://xycai.us/",
+    websiteUrl: "https://xycai.us",
     apiKeyUrl: "https://xycai.us/register",
     category: "aggregator",
     baseUrl: "https://apicdn.xycai.us",
@@ -713,8 +706,8 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   // ===== 非赞助商预设：应用内展示按显示名排序，此处文件顺序不影响展示 =====
   {
     name: "Amux",
-    websiteUrl: "https://amux.ai/",
-    apiKeyUrl: "https://amux.ai/",
+    websiteUrl: "https://amux.ai",
+    apiKeyUrl: "https://amux.ai",
     category: "aggregator",
     baseUrl: "https://api.amux.ai",
     mode: "direct",
@@ -785,7 +778,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "DeepSeek",
-    websiteUrl: "https://platform.deepseek.com/",
+    websiteUrl: "https://platform.deepseek.com",
     category: "cn_official",
     baseUrl: "https://api.deepseek.com/anthropic",
     mode: "proxy",
@@ -819,8 +812,8 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "Zhipu GLM",
-    websiteUrl: "https://open.bigmodel.cn/",
-    apiKeyUrl: "https://www.bigmodel.cn/claude-code?ic=RRVJPB5SII",
+    websiteUrl: "https://open.bigmodel.cn",
+    apiKeyUrl: "https://www.bigmodel.cn/claude-code",
     category: "cn_official",
     baseUrl: "https://open.bigmodel.cn/api/anthropic",
     mode: "proxy",
@@ -831,8 +824,8 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "Zhipu GLM en",
-    websiteUrl: "https://z.ai/",
-    apiKeyUrl: "https://z.ai/subscribe?ic=8JVLJQFSKB",
+    websiteUrl: "https://z.ai",
+    apiKeyUrl: "https://z.ai/subscribe",
     category: "cn_official",
     baseUrl: "https://api.z.ai/api/anthropic",
     mode: "proxy",
@@ -883,7 +876,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "Bailian",
-    websiteUrl: "https://bailian.console.aliyun.com/",
+    websiteUrl: "https://bailian.console.aliyun.com",
     category: "cn_official",
     baseUrl: "https://dashscope.aliyuncs.com/apps/anthropic",
     mode: "proxy",
@@ -894,7 +887,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "Bailian For Coding",
-    websiteUrl: "https://bailian.console.aliyun.com/",
+    websiteUrl: "https://bailian.console.aliyun.com",
     category: "cn_official",
     baseUrl: "https://coding.dashscope.aliyuncs.com/apps/anthropic",
     mode: "proxy",
@@ -939,7 +932,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "ModelScope",
-    websiteUrl: "https://modelscope.cn/",
+    websiteUrl: "https://modelscope.cn",
     category: "aggregator",
     baseUrl: "https://api-inference.modelscope.cn",
     mode: "proxy",
@@ -966,7 +959,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "MiniMax",
-    websiteUrl: "https://platform.minimaxi.com/",
+    websiteUrl: "https://platform.minimaxi.com",
     apiKeyUrl: "https://platform.minimaxi.com/subscribe/coding-plan",
     category: "cn_official",
     baseUrl: "https://api.minimaxi.com/anthropic",
@@ -982,7 +975,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "MiniMax en",
-    websiteUrl: "https://platform.minimax.io/",
+    websiteUrl: "https://platform.minimax.io",
     apiKeyUrl: "https://platform.minimax.io/subscribe/coding-plan",
     category: "cn_official",
     baseUrl: "https://api.minimax.io/anthropic",
@@ -1007,8 +1000,8 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "AiHubMix",
-    websiteUrl: "https://aihubmix.com/",
-    apiKeyUrl: "https://aihubmix.com/",
+    websiteUrl: "https://aihubmix.com",
+    apiKeyUrl: "https://aihubmix.com",
     category: "aggregator",
     baseUrl: "https://aihubmix.com",
     apiKeyField: "ANTHROPIC_API_KEY",
@@ -1021,7 +1014,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "CherryIN",
-    websiteUrl: "https://open.cherryin.ai/",
+    websiteUrl: "https://open.cherryin.ai",
     apiKeyUrl: "https://open.cherryin.ai/console/token",
     category: "aggregator",
     baseUrl: "https://open.cherryin.net",
@@ -1037,7 +1030,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "RelaxyCode",
-    websiteUrl: "https://www.relaxycode.com/",
+    websiteUrl: "https://www.relaxycode.com",
     apiKeyUrl: "https://www.relaxycode.com/register",
     category: "third_party",
     baseUrl: "https://www.relaxycode.com",
@@ -1048,8 +1041,8 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "E-FlowCode",
-    websiteUrl: "https://e-flowcode.cc/",
-    apiKeyUrl: "https://e-flowcode.cc/",
+    websiteUrl: "https://e-flowcode.cc",
+    apiKeyUrl: "https://e-flowcode.cc",
     category: "third_party",
     baseUrl: "https://e-flowcode.cc",
     mode: "direct",
@@ -1061,7 +1054,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "OpenRouter",
-    websiteUrl: "https://openrouter.ai/",
+    websiteUrl: "https://openrouter.ai",
     apiKeyUrl: "https://openrouter.ai/keys",
     category: "aggregator",
     baseUrl: "https://openrouter.ai/api",
@@ -1078,8 +1071,8 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "TheRouter",
-    websiteUrl: "https://therouter.ai/",
-    apiKeyUrl: "https://dashboard.therouter.ai/",
+    websiteUrl: "https://therouter.ai",
+    apiKeyUrl: "https://dashboard.therouter.ai",
     category: "aggregator",
     baseUrl: "https://api.therouter.ai",
     mode: "proxy",
@@ -1094,8 +1087,8 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "Novita AI",
-    websiteUrl: "https://novita.ai/",
-    apiKeyUrl: "https://novita.ai/",
+    websiteUrl: "https://novita.ai",
+    apiKeyUrl: "https://novita.ai",
     category: "aggregator",
     baseUrl: "https://api.novita.ai/anthropic",
     mode: "proxy",
@@ -1111,7 +1104,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "Nvidia",
-    websiteUrl: "https://build.nvidia.com/",
+    websiteUrl: "https://build.nvidia.com",
     apiKeyUrl: "https://build.nvidia.com/settings/api-keys",
     category: "aggregator",
     baseUrl: "https://integrate.api.nvidia.com",
@@ -1127,7 +1120,7 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "PIPELLM",
-    websiteUrl: "https://code.pipellm.ai/",
+    websiteUrl: "https://code.pipellm.ai",
     apiKeyUrl: "https://code.pipellm.ai/login",
     category: "aggregator",
     baseUrl: "https://cc-api.pipellm.ai",
@@ -1138,8 +1131,8 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "Xiaomi MiMo",
-    websiteUrl: "https://platform.xiaomimimo.com/",
-    apiKeyUrl: "https://platform.xiaomimimo.com/#/console/api-keys",
+    websiteUrl: "https://platform.xiaomimimo.com",
+    apiKeyUrl: "https://platform.xiaomimimo.com",
     category: "cn_official",
     baseUrl: "https://api.xiaomimimo.com/anthropic",
     mode: "proxy",
@@ -1154,8 +1147,8 @@ export const claudeDesktopProviderPresets: ClaudeDesktopProviderPreset[] = [
   },
   {
     name: "Xiaomi MiMo Token Plan (China)",
-    websiteUrl: "https://platform.xiaomimimo.com/#/token-plan",
-    apiKeyUrl: "https://platform.xiaomimimo.com/#/console/plan-manage",
+    websiteUrl: "https://platform.xiaomimimo.com",
+    apiKeyUrl: "https://platform.xiaomimimo.com",
     category: "cn_official",
     baseUrl: "https://token-plan-cn.xiaomimimo.com/anthropic",
     mode: "proxy",

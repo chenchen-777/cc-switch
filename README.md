@@ -4,7 +4,7 @@ A custom build of [CC Switch](https://github.com/farion1231/cc-switch), based on
 
 Removes partner promotion copy, sponsored badges and sorting, and referral parameters in provider links. Existing provider configurations and functional presets remain usable. Updates and downloads use this repository only.
 
-Release: v3.20.1-777.1. Application/MSI version: 3.20.7771.
+Release: v3.20.1-777.2. Application/MSI version: 3.20.7772.
 
 [Download Windows and macOS installers](https://github.com/chenchen-777/cc-switch/releases/latest)
 

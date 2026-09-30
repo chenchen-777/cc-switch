@@ -137,7 +137,7 @@ export const codexProviderPresets: CodexProviderPreset[] = [
   // ===== 赞助商预设：文件顺序 = 应用内展示顺序，与 README 赞助商表对齐 =====
   {
     name: "Kimi",
-    websiteUrl: "https://platform.kimi.com/",
+    websiteUrl: "https://platform.kimi.com",
     apiKeyUrl: "https://platform.kimi.com/console/api-keys",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -249,7 +249,7 @@ export const codexProviderPresets: CodexProviderPreset[] = [
   },
   {
     name: "PackyCode",
-    websiteUrl: "https://www.packyapi.ai/",
+    websiteUrl: "https://www.packyapi.ai",
     apiKeyUrl: "https://www.packyapi.ai/register",
     category: "third_party",
     auth: generateThirdPartyAuth(""),
@@ -268,7 +268,7 @@ export const codexProviderPresets: CodexProviderPreset[] = [
   },
   {
     name: "ZetaAPI",
-    websiteUrl: "https://zetaapi.ai/",
+    websiteUrl: "https://zetaapi.ai",
     apiKeyUrl: "https://zetaapi.ai/go/u117",
     category: "aggregator",
     auth: generateThirdPartyAuth(""),
@@ -282,7 +282,7 @@ export const codexProviderPresets: CodexProviderPreset[] = [
   },
   {
     name: "APINebula",
-    websiteUrl: "https://apinebula.ai/",
+    websiteUrl: "https://apinebula.ai",
     apiKeyUrl: "https://apinebula.ai/VjM74M",
     category: "third_party",
     auth: generateThirdPartyAuth(""),
@@ -303,7 +303,7 @@ requires_openai_auth = true`,
   },
   {
     name: "AICodeMirror",
-    websiteUrl: "https://www.aicodemirror.ai/",
+    websiteUrl: "https://www.aicodemirror.ai",
     apiKeyUrl: "https://www.aicodemirror.ai/register",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -319,8 +319,8 @@ requires_openai_auth = true`,
   },
   {
     name: "PatewayAI",
-    websiteUrl: "https://pateway.ai/",
-    apiKeyUrl: "https://pateway.ai/?ch=etzpm8#/",
+    websiteUrl: "https://pateway.ai",
+    apiKeyUrl: "https://pateway.ai",
     category: "third_party",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -333,9 +333,8 @@ requires_openai_auth = true`,
   },
   {
     name: "FennoAI",
-    websiteUrl: "https://api.fenno.ai/",
-    apiKeyUrl:
-      "https://api.fenno.ai/register?redirect=%2Fpurchase%3Ftab%3Dsubscription%26group%3D16",
+    websiteUrl: "https://api.fenno.ai",
+    apiKeyUrl: "https://api.fenno.ai/register",
     category: "aggregator",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -348,7 +347,7 @@ requires_openai_auth = true`,
   },
   {
     name: "RunAPI",
-    websiteUrl: "https://runapi.host/",
+    websiteUrl: "https://runapi.host",
     apiKeyUrl: "https://runapi.host/register",
     category: "aggregator",
     auth: generateThirdPartyAuth(""),
@@ -363,8 +362,8 @@ requires_openai_auth = true`,
   {
     name: "Shengsuanyun",
     nameKey: "providerForm.presets.shengsuanyun",
-    websiteUrl: "https://www.shengsuanyun.com/?from=CH_4HHXMRYF",
-    apiKeyUrl: "https://www.shengsuanyun.com/?from=CH_4HHXMRYF",
+    websiteUrl: "https://www.shengsuanyun.com",
+    apiKeyUrl: "https://www.shengsuanyun.com",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
       "shengsuanyun",
@@ -376,8 +375,8 @@ requires_openai_auth = true`,
   },
   {
     name: "AIGoCode",
-    websiteUrl: "https://aigocode.app/",
-    apiKeyUrl: "https://aigocode.app/invite/CC-SWITCH",
+    websiteUrl: "https://aigocode.app",
+    apiKeyUrl: "https://aigocode.app",
     category: "third_party",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -409,7 +408,7 @@ requires_openai_auth = true`,
   },
   {
     name: "AICoding",
-    websiteUrl: "https://aicoding.inc/",
+    websiteUrl: "https://aicoding.inc",
     apiKeyUrl: "https://aicoding.inc/i/CCSWITCH",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -423,7 +422,7 @@ requires_openai_auth = true`,
   },
   {
     name: "SubRouter",
-    websiteUrl: "https://subrouter.ai/",
+    websiteUrl: "https://subrouter.ai",
     apiKeyUrl: "https://subrouter.ai/register",
     category: "aggregator",
     auth: generateThirdPartyAuth(""),
@@ -437,7 +436,7 @@ requires_openai_auth = true`,
   },
   {
     name: "APIKEY.FUN",
-    websiteUrl: "https://apikey.fun/",
+    websiteUrl: "https://apikey.fun",
     apiKeyUrl: "https://apikey.fun/register",
     category: "third_party",
     auth: generateThirdPartyAuth(""),
@@ -461,7 +460,7 @@ requires_openai_auth = true`,
   },
   {
     name: "Code0",
-    websiteUrl: "https://code0.ai/",
+    websiteUrl: "https://code0.ai",
     apiKeyUrl: "https://code0.ai/agent/register/B2XHxGjGmRvqgznY",
     category: "aggregator",
     auth: generateThirdPartyAuth(""),
@@ -475,8 +474,8 @@ requires_openai_auth = true`,
   },
   {
     name: "TeamoRouter",
-    websiteUrl: "https://teamorouter.cn/",
-    apiKeyUrl: "https://teamorouter.cn/",
+    websiteUrl: "https://teamorouter.cn",
+    apiKeyUrl: "https://teamorouter.cn",
     category: "aggregator",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -492,8 +491,8 @@ requires_openai_auth = true`,
   },
   {
     name: "PPIO",
-    websiteUrl: "https://ppio.com/",
-    apiKeyUrl: "https://ppio.com/activity/ccswitch",
+    websiteUrl: "https://ppio.com",
+    apiKeyUrl: "https://ppio.com",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
       "ppio",
@@ -523,7 +522,7 @@ requires_openai_auth = true`,
   },
   {
     name: "ClaudeCN",
-    websiteUrl: "https://claudecn.top/",
+    websiteUrl: "https://claudecn.top",
     apiKeyUrl: "https://claudecn.ai/register",
     category: "third_party",
     auth: generateThirdPartyAuth(""),
@@ -536,10 +535,8 @@ requires_openai_auth = true`,
   },
   {
     name: "火山 Agent Plan",
-    websiteUrl:
-      "https://www.volcengine.com/activity/agentplan?ac=MMAP8JTTCAQ2&rc=6J6FV5N2",
-    apiKeyUrl:
-      "https://www.volcengine.com/activity/agentplan?ac=MMAP8JTTCAQ2&rc=6J6FV5N2",
+    websiteUrl: "https://www.volcengine.com",
+    apiKeyUrl: "https://www.volcengine.com",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
       "ark_agentplan",
@@ -571,10 +568,8 @@ requires_openai_auth = true`,
   },
   {
     name: "火山 Coding Plan",
-    websiteUrl:
-      "https://www.volcengine.com/activity/codingplan?ac=MMAP8JTTCAQ2&rc=6J6FV5N2",
-    apiKeyUrl:
-      "https://www.volcengine.com/activity/codingplan?ac=MMAP8JTTCAQ2&rc=6J6FV5N2",
+    websiteUrl: "https://www.volcengine.com",
+    apiKeyUrl: "https://www.volcengine.com",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
       "ark_codingplan",
@@ -638,9 +633,9 @@ requires_openai_auth = true`,
   {
     name: "DouBaoSeed",
     websiteUrl:
-      "https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey?apikey=%7B%7D",
+      "https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey",
     apiKeyUrl:
-      "https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey?apikey=%7B%7D",
+      "https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
       "doubaoseed",
@@ -669,7 +664,7 @@ requires_openai_auth = true`,
   },
   {
     name: "SiliconFlow",
-    websiteUrl: "https://siliconflow.cn/",
+    websiteUrl: "https://siliconflow.cn",
     apiKeyUrl: "https://cloud.siliconflow.cn/i/YflgU2Ve",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -695,7 +690,7 @@ requires_openai_auth = true`,
   },
   {
     name: "SiliconFlow en",
-    websiteUrl: "https://siliconflow.com/",
+    websiteUrl: "https://siliconflow.com",
     apiKeyUrl: "https://cloud.siliconflow.cn/i/YflgU2Ve",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -722,7 +717,7 @@ requires_openai_auth = true`,
   },
   {
     name: "A6API",
-    websiteUrl: "https://www.a6api.com/",
+    websiteUrl: "https://www.a6api.com",
     apiKeyUrl: "https://a6api.com/register",
     category: "aggregator",
     auth: generateThirdPartyAuth(""),
@@ -763,9 +758,8 @@ requires_openai_auth = true`,
   {
     name: "Compshare",
     nameKey: "providerForm.presets.ucloud",
-    websiteUrl: "https://www.compshare.cn/",
-    apiKeyUrl:
-      "https://www.compshare.cn/coding-plan?ytag=GPU_YY_YX_git_cc-switch",
+    websiteUrl: "https://www.compshare.cn",
+    apiKeyUrl: "https://www.compshare.cn/coding-plan",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
       "compshare",
@@ -780,9 +774,8 @@ requires_openai_auth = true`,
   {
     name: "Compshare Coding Plan",
     nameKey: "providerForm.presets.ucloudCoding",
-    websiteUrl: "https://www.compshare.cn/",
-    apiKeyUrl:
-      "https://www.compshare.cn/coding-plan?ytag=GPU_YY_YX_git_cc-switch",
+    websiteUrl: "https://www.compshare.cn",
+    apiKeyUrl: "https://www.compshare.cn/coding-plan",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
       "compshare_coding",
@@ -796,7 +789,7 @@ requires_openai_auth = true`,
   },
   {
     name: "CCSub",
-    websiteUrl: "https://www.ccsub.net/",
+    websiteUrl: "https://www.ccsub.net",
     apiKeyUrl: "https://www.ccsub.net/register",
     category: "aggregator",
     auth: generateThirdPartyAuth(""),
@@ -810,7 +803,7 @@ requires_openai_auth = true`,
   },
   {
     name: "SSSAiCode",
-    websiteUrl: "https://sssaicodeapi.com/",
+    websiteUrl: "https://sssaicodeapi.com",
     apiKeyUrl: "https://sssaicodeapi.com/register",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -829,7 +822,7 @@ requires_openai_auth = true`,
   },
   {
     name: "Micu",
-    websiteUrl: "https://www.micuapi.ai/",
+    websiteUrl: "https://www.micuapi.ai",
     apiKeyUrl: "https://www.micuapi.ai/register",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -844,7 +837,7 @@ requires_openai_auth = true`,
   },
   {
     name: "RightCode",
-    websiteUrl: "https://www.rightapi.ai/",
+    websiteUrl: "https://www.rightapi.ai",
     apiKeyUrl: "https://www.rightapi.ai/register",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -858,8 +851,8 @@ requires_openai_auth = true`,
   },
   {
     name: "ETok.ai",
-    websiteUrl: "https://etok.ai/",
-    apiKeyUrl: "https://etok.ai/",
+    websiteUrl: "https://etok.ai",
+    apiKeyUrl: "https://etok.ai",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
       "etok",
@@ -873,8 +866,8 @@ requires_openai_auth = true`,
   },
   {
     name: "Cubence",
-    websiteUrl: "https://cubence.com/",
-    apiKeyUrl: "https://cubence.com/signup?code=CCSWITCH&source=ccs",
+    websiteUrl: "https://cubence.com",
+    apiKeyUrl: "https://cubence.com/signup",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
       "cubence",
@@ -893,7 +886,7 @@ requires_openai_auth = true`,
   },
   {
     name: "CrazyRouter",
-    websiteUrl: "https://www.crazyrouter.com/",
+    websiteUrl: "https://www.crazyrouter.com",
     apiKeyUrl: "https://www.crazyrouter.com/register",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -907,7 +900,7 @@ requires_openai_auth = true`,
   },
   {
     name: "DMXAPI",
-    websiteUrl: "https://www.dmxapi.cn/",
+    websiteUrl: "https://www.dmxapi.cn",
     category: "aggregator",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -919,7 +912,7 @@ requires_openai_auth = true`,
   },
   {
     name: "SudoCode.chat",
-    websiteUrl: "https://sudocode.chat/",
+    websiteUrl: "https://sudocode.chat",
     apiKeyUrl: "https://sudocode.chat/sign-up",
     category: "third_party",
     auth: generateThirdPartyAuth(""),
@@ -940,8 +933,8 @@ requires_openai_auth = true`,
   },
   {
     name: "SudoCode.us",
-    websiteUrl: "https://sudocode.us/",
-    apiKeyUrl: "https://sudocode.us/",
+    websiteUrl: "https://sudocode.us",
+    apiKeyUrl: "https://sudocode.us",
     category: "third_party",
     auth: generateThirdPartyAuth(""),
     config: `model_provider = "custom"
@@ -962,7 +955,7 @@ requires_openai_auth = true`,
   },
   {
     name: "XycAi",
-    websiteUrl: "https://xycai.us/",
+    websiteUrl: "https://xycai.us",
     apiKeyUrl: "https://xycai.us/register",
     category: "aggregator",
     auth: generateThirdPartyAuth(""),
@@ -980,8 +973,8 @@ requires_openai_auth = true`,
   // ===== 非赞助商预设：应用内展示按显示名排序，此处文件顺序不影响展示 =====
   {
     name: "Amux",
-    websiteUrl: "https://amux.ai/",
-    apiKeyUrl: "https://amux.ai/",
+    websiteUrl: "https://amux.ai",
+    apiKeyUrl: "https://amux.ai",
     category: "aggregator",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -1022,7 +1015,7 @@ requires_openai_auth = true`,
   },
   {
     name: "DeepSeek",
-    websiteUrl: "https://platform.deepseek.com/",
+    websiteUrl: "https://platform.deepseek.com",
     apiKeyUrl: "https://platform.deepseek.com/api_keys",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -1060,8 +1053,8 @@ requires_openai_auth = true`,
   },
   {
     name: "Zhipu GLM",
-    websiteUrl: "https://open.bigmodel.cn/",
-    apiKeyUrl: "https://www.bigmodel.cn/claude-code?ic=RRVJPB5SII",
+    websiteUrl: "https://open.bigmodel.cn",
+    apiKeyUrl: "https://www.bigmodel.cn/claude-code",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
       "zhipu_glm",
@@ -1095,8 +1088,8 @@ requires_openai_auth = true`,
   },
   {
     name: "Zhipu GLM en",
-    websiteUrl: "https://z.ai/",
-    apiKeyUrl: "https://z.ai/subscribe?ic=8JVLJQFSKB",
+    websiteUrl: "https://z.ai",
+    apiKeyUrl: "https://z.ai/subscribe",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
       "zhipu_glm_en",
@@ -1250,8 +1243,8 @@ requires_openai_auth = true`,
   },
   {
     name: "Bailian",
-    websiteUrl: "https://bailian.console.aliyun.com/",
-    apiKeyUrl: "https://bailian.console.aliyun.com/#/api-key",
+    websiteUrl: "https://bailian.console.aliyun.com",
+    apiKeyUrl: "https://bailian.console.aliyun.com",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
       "bailian",
@@ -1404,7 +1397,7 @@ requires_openai_auth = true`,
   },
   {
     name: "ModelScope",
-    websiteUrl: "https://modelscope.cn/",
+    websiteUrl: "https://modelscope.cn",
     apiKeyUrl: "https://modelscope.cn/my/myaccesstoken",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -1472,7 +1465,7 @@ requires_openai_auth = true`,
   },
   {
     name: "MiniMax",
-    websiteUrl: "https://platform.minimaxi.com/",
+    websiteUrl: "https://platform.minimaxi.com",
     apiKeyUrl: "https://platform.minimaxi.com/subscribe/coding-plan",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -1510,7 +1503,7 @@ requires_openai_auth = true`,
   },
   {
     name: "MiniMax en",
-    websiteUrl: "https://platform.minimax.io/",
+    websiteUrl: "https://platform.minimax.io",
     apiKeyUrl: "https://platform.minimax.io/subscribe/coding-plan",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -1569,8 +1562,8 @@ requires_openai_auth = true`,
   },
   {
     name: "Xiaomi MiMo",
-    websiteUrl: "https://platform.xiaomimimo.com/",
-    apiKeyUrl: "https://platform.xiaomimimo.com/#/console/api-keys",
+    websiteUrl: "https://platform.xiaomimimo.com",
+    apiKeyUrl: "https://platform.xiaomimimo.com",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
       "xiaomi_mimo",
@@ -1611,8 +1604,8 @@ requires_openai_auth = true`,
   },
   {
     name: "Xiaomi MiMo Token Plan (China)",
-    websiteUrl: "https://platform.xiaomimimo.com/#/token-plan",
-    apiKeyUrl: "https://platform.xiaomimimo.com/#/console/plan-manage",
+    websiteUrl: "https://platform.xiaomimimo.com",
+    apiKeyUrl: "https://platform.xiaomimimo.com",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
       "xiaomi_mimo_token_plan",
@@ -1653,8 +1646,8 @@ requires_openai_auth = true`,
   },
   {
     name: "Novita AI",
-    websiteUrl: "https://novita.ai/",
-    apiKeyUrl: "https://novita.ai/",
+    websiteUrl: "https://novita.ai",
+    apiKeyUrl: "https://novita.ai",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
       "novita",
@@ -1690,7 +1683,7 @@ requires_openai_auth = true`,
   {
     name: "xAI (Grok)",
     websiteUrl: "https://x.ai/api",
-    apiKeyUrl: "https://console.x.ai/",
+    apiKeyUrl: "https://console.x.ai",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig("xai", "https://api.x.ai/v1", "grok-4.5"),
     endpointCandidates: ["https://api.x.ai/v1"],
@@ -1746,7 +1739,7 @@ requires_openai_auth = true`,
   },
   {
     name: "Nvidia",
-    websiteUrl: "https://build.nvidia.com/",
+    websiteUrl: "https://build.nvidia.com",
     apiKeyUrl: "https://build.nvidia.com/settings/api-keys",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -1840,7 +1833,7 @@ requires_openai_auth = true`,
   },
   {
     name: "AiHubMix",
-    websiteUrl: "https://aihubmix.com/",
+    websiteUrl: "https://aihubmix.com",
     category: "aggregator",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -1857,7 +1850,7 @@ requires_openai_auth = true`,
   },
   {
     name: "CherryIN",
-    websiteUrl: "https://open.cherryin.ai/",
+    websiteUrl: "https://open.cherryin.ai",
     apiKeyUrl: "https://open.cherryin.ai/console/token",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -1871,7 +1864,7 @@ requires_openai_auth = true`,
   },
   {
     name: "RelaxyCode",
-    websiteUrl: "https://www.relaxycode.com/",
+    websiteUrl: "https://www.relaxycode.com",
     apiKeyUrl: "https://www.relaxycode.com/register",
     category: "third_party",
     auth: generateThirdPartyAuth(""),
@@ -1884,8 +1877,8 @@ requires_openai_auth = true`,
   },
   {
     name: "E-FlowCode",
-    websiteUrl: "https://e-flowcode.cc/",
-    apiKeyUrl: "https://e-flowcode.cc/",
+    websiteUrl: "https://e-flowcode.cc",
+    apiKeyUrl: "https://e-flowcode.cc",
     auth: {
       OPENAI_API_KEY: "",
     },
@@ -1909,7 +1902,7 @@ model_auto_compact_token_limit = 9000000`,
   },
   {
     name: "PIPELLM",
-    websiteUrl: "https://code.pipellm.ai/",
+    websiteUrl: "https://code.pipellm.ai",
     apiKeyUrl: "https://code.pipellm.ai/login",
     auth: {
       OPENAI_API_KEY: "",
@@ -1930,7 +1923,7 @@ base_url = "https://cc-api.pipellm.ai/v1"`,
   },
   {
     name: "OpenRouter",
-    websiteUrl: "https://openrouter.ai/",
+    websiteUrl: "https://openrouter.ai",
     apiKeyUrl: "https://openrouter.ai/keys",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -1944,8 +1937,8 @@ base_url = "https://cc-api.pipellm.ai/v1"`,
   },
   {
     name: "TheRouter",
-    websiteUrl: "https://therouter.ai/",
-    apiKeyUrl: "https://dashboard.therouter.ai/",
+    websiteUrl: "https://therouter.ai",
+    apiKeyUrl: "https://dashboard.therouter.ai",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
       "therouter",

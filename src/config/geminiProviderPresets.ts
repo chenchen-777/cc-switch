@@ -35,7 +35,7 @@ export interface GeminiProviderPreset {
 export const geminiProviderPresets: GeminiProviderPreset[] = [
   {
     name: "Google Official",
-    websiteUrl: "https://ai.google.dev/",
+    websiteUrl: "https://ai.google.dev",
     apiKeyUrl: "https://aistudio.google.com/apikey",
     settingsConfig: {
       env: {},
@@ -54,7 +54,7 @@ export const geminiProviderPresets: GeminiProviderPreset[] = [
   // ===== 赞助商预设：文件顺序 = 应用内展示顺序，与 README 赞助商表对齐 =====
   {
     name: "PackyCode",
-    websiteUrl: "https://www.packyapi.ai/",
+    websiteUrl: "https://www.packyapi.ai",
     apiKeyUrl: "https://www.packyapi.ai/register",
     settingsConfig: {
       env: {
@@ -76,7 +76,7 @@ export const geminiProviderPresets: GeminiProviderPreset[] = [
   },
   {
     name: "APINebula",
-    websiteUrl: "https://apinebula.ai/",
+    websiteUrl: "https://apinebula.ai",
     apiKeyUrl: "https://apinebula.ai/VjM74M",
     settingsConfig: {
       env: {
@@ -94,7 +94,7 @@ export const geminiProviderPresets: GeminiProviderPreset[] = [
   },
   {
     name: "AICodeMirror",
-    websiteUrl: "https://www.aicodemirror.ai/",
+    websiteUrl: "https://www.aicodemirror.ai",
     apiKeyUrl: "https://www.aicodemirror.ai/register",
     settingsConfig: {
       env: {
@@ -113,8 +113,8 @@ export const geminiProviderPresets: GeminiProviderPreset[] = [
   {
     name: "Shengsuanyun",
     nameKey: "providerForm.presets.shengsuanyun",
-    websiteUrl: "https://www.shengsuanyun.com/?from=CH_4HHXMRYF",
-    apiKeyUrl: "https://www.shengsuanyun.com/?from=CH_4HHXMRYF",
+    websiteUrl: "https://www.shengsuanyun.com",
+    apiKeyUrl: "https://www.shengsuanyun.com",
     settingsConfig: {
       env: {
         GOOGLE_GEMINI_BASE_URL: "https://router.shengsuanyun.com/api",
@@ -129,8 +129,8 @@ export const geminiProviderPresets: GeminiProviderPreset[] = [
   },
   {
     name: "AIGoCode",
-    websiteUrl: "https://aigocode.app/",
-    apiKeyUrl: "https://aigocode.app/invite/CC-SWITCH",
+    websiteUrl: "https://aigocode.app",
+    apiKeyUrl: "https://aigocode.app",
     settingsConfig: {
       env: {
         GOOGLE_GEMINI_BASE_URL: "https://api.aigocode.app",
@@ -168,7 +168,7 @@ export const geminiProviderPresets: GeminiProviderPreset[] = [
   },
   {
     name: "AICoding",
-    websiteUrl: "https://aicoding.inc/",
+    websiteUrl: "https://aicoding.inc",
     apiKeyUrl: "https://aicoding.inc/i/CCSWITCH",
     settingsConfig: {
       env: {
@@ -186,7 +186,7 @@ export const geminiProviderPresets: GeminiProviderPreset[] = [
   },
   {
     name: "SubRouter",
-    websiteUrl: "https://subrouter.ai/",
+    websiteUrl: "https://subrouter.ai",
     apiKeyUrl: "https://subrouter.ai/register",
     settingsConfig: {
       env: {
@@ -203,7 +203,7 @@ export const geminiProviderPresets: GeminiProviderPreset[] = [
   },
   {
     name: "APIKEY.FUN",
-    websiteUrl: "https://apikey.fun/",
+    websiteUrl: "https://apikey.fun",
     apiKeyUrl: "https://apikey.fun/register",
     settingsConfig: {
       env: {
@@ -221,7 +221,7 @@ export const geminiProviderPresets: GeminiProviderPreset[] = [
   },
   {
     name: "Code0",
-    websiteUrl: "https://code0.ai/",
+    websiteUrl: "https://code0.ai",
     apiKeyUrl: "https://code0.ai/agent/register/B2XHxGjGmRvqgznY",
     settingsConfig: {
       env: {
@@ -237,7 +237,7 @@ export const geminiProviderPresets: GeminiProviderPreset[] = [
   },
   {
     name: "A6API",
-    websiteUrl: "https://www.a6api.com/",
+    websiteUrl: "https://www.a6api.com",
     apiKeyUrl: "https://a6api.com/register",
     settingsConfig: {
       env: {
@@ -253,7 +253,7 @@ export const geminiProviderPresets: GeminiProviderPreset[] = [
   },
   {
     name: "SSSAiCode",
-    websiteUrl: "https://sssaicodeapi.com/",
+    websiteUrl: "https://sssaicodeapi.com",
     apiKeyUrl: "https://sssaicodeapi.com/register",
     settingsConfig: {
       env: {
@@ -275,8 +275,8 @@ export const geminiProviderPresets: GeminiProviderPreset[] = [
   },
   {
     name: "ETok.ai",
-    websiteUrl: "https://etok.ai/",
-    apiKeyUrl: "https://etok.ai/",
+    websiteUrl: "https://etok.ai",
+    apiKeyUrl: "https://etok.ai",
     settingsConfig: {
       env: {
         GOOGLE_GEMINI_BASE_URL: "https://api.etok.ai/v1beta",
@@ -293,8 +293,8 @@ export const geminiProviderPresets: GeminiProviderPreset[] = [
   },
   {
     name: "Cubence",
-    websiteUrl: "https://cubence.com/",
-    apiKeyUrl: "https://cubence.com/signup?code=CCSWITCH&source=ccs",
+    websiteUrl: "https://cubence.com",
+    apiKeyUrl: "https://cubence.com/signup",
     settingsConfig: {
       env: {
         GOOGLE_GEMINI_BASE_URL: "https://api.cubence.com",
@@ -316,7 +316,7 @@ export const geminiProviderPresets: GeminiProviderPreset[] = [
   },
   {
     name: "CrazyRouter",
-    websiteUrl: "https://www.crazyrouter.com/",
+    websiteUrl: "https://www.crazyrouter.com",
     apiKeyUrl: "https://www.crazyrouter.com/register",
     settingsConfig: {
       env: {
@@ -334,8 +334,8 @@ export const geminiProviderPresets: GeminiProviderPreset[] = [
   },
   {
     name: "SudoCode.us",
-    websiteUrl: "https://sudocode.us/",
-    apiKeyUrl: "https://sudocode.us/",
+    websiteUrl: "https://sudocode.us",
+    apiKeyUrl: "https://sudocode.us",
     settingsConfig: {
       env: {
         GOOGLE_GEMINI_BASE_URL: "https://sudocode.us",
@@ -352,7 +352,7 @@ export const geminiProviderPresets: GeminiProviderPreset[] = [
   },
   {
     name: "XycAi",
-    websiteUrl: "https://xycai.us/",
+    websiteUrl: "https://xycai.us",
     apiKeyUrl: "https://xycai.us/register",
     settingsConfig: {
       env: {
@@ -371,8 +371,8 @@ export const geminiProviderPresets: GeminiProviderPreset[] = [
   // ===== 非赞助商预设：应用内展示按显示名排序，此处文件顺序不影响展示 =====
   {
     name: "E-FlowCode",
-    websiteUrl: "https://e-flowcode.cc/",
-    apiKeyUrl: "https://e-flowcode.cc/",
+    websiteUrl: "https://e-flowcode.cc",
+    apiKeyUrl: "https://e-flowcode.cc",
     settingsConfig: {
       env: {
         GOOGLE_GEMINI_BASE_URL: "https://e-flowcode.cc",
@@ -406,7 +406,7 @@ export const geminiProviderPresets: GeminiProviderPreset[] = [
   },
   {
     name: "CherryIN",
-    websiteUrl: "https://open.cherryin.ai/",
+    websiteUrl: "https://open.cherryin.ai",
     apiKeyUrl: "https://open.cherryin.ai/console/token",
     settingsConfig: {
       env: {
@@ -424,7 +424,7 @@ export const geminiProviderPresets: GeminiProviderPreset[] = [
   },
   {
     name: "OpenRouter",
-    websiteUrl: "https://openrouter.ai/",
+    websiteUrl: "https://openrouter.ai",
     apiKeyUrl: "https://openrouter.ai/keys",
     settingsConfig: {
       env: {
@@ -441,8 +441,8 @@ export const geminiProviderPresets: GeminiProviderPreset[] = [
   },
   {
     name: "TheRouter",
-    websiteUrl: "https://therouter.ai/",
-    apiKeyUrl: "https://dashboard.therouter.ai/",
+    websiteUrl: "https://therouter.ai",
+    apiKeyUrl: "https://dashboard.therouter.ai",
     settingsConfig: {
       env: {
         GOOGLE_GEMINI_BASE_URL: "https://api.therouter.ai",

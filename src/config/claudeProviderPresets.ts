@@ -93,7 +93,7 @@ export const providerPresets: ProviderPreset[] = [
   // ===== 赞助商预设：文件顺序 = 应用内展示顺序，与 README 赞助商表对齐 =====
   {
     name: "Kimi",
-    websiteUrl: "https://platform.kimi.com/",
+    websiteUrl: "https://platform.kimi.com",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://api.moonshot.cn/anthropic",
@@ -133,7 +133,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "PackyCode",
-    websiteUrl: "https://www.packyapi.ai/",
+    websiteUrl: "https://www.packyapi.ai",
     apiKeyUrl: "https://www.packyapi.ai/register",
     settingsConfig: {
       env: {
@@ -153,7 +153,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "ZetaAPI",
-    websiteUrl: "https://zetaapi.ai/",
+    websiteUrl: "https://zetaapi.ai",
     apiKeyUrl: "https://zetaapi.ai/go/u117",
     settingsConfig: {
       env: {
@@ -166,7 +166,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "APINebula",
-    websiteUrl: "https://apinebula.ai/",
+    websiteUrl: "https://apinebula.ai",
     apiKeyUrl: "https://apinebula.ai/VjM74M",
     settingsConfig: {
       env: {
@@ -181,7 +181,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "AICodeMirror",
-    websiteUrl: "https://www.aicodemirror.ai/",
+    websiteUrl: "https://www.aicodemirror.ai",
     apiKeyUrl: "https://www.aicodemirror.ai/register",
     settingsConfig: {
       env: {
@@ -196,8 +196,8 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "PatewayAI",
-    websiteUrl: "https://pateway.ai/",
-    apiKeyUrl: "https://pateway.ai/?ch=etzpm8#/",
+    websiteUrl: "https://pateway.ai",
+    apiKeyUrl: "https://pateway.ai",
     apiKeyField: "ANTHROPIC_API_KEY",
     settingsConfig: {
       env: {
@@ -210,9 +210,8 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "FennoAI",
-    websiteUrl: "https://api.fenno.ai/",
-    apiKeyUrl:
-      "https://api.fenno.ai/register?redirect=%2Fpurchase%3Ftab%3Dsubscription%26group%3D16",
+    websiteUrl: "https://api.fenno.ai",
+    apiKeyUrl: "https://api.fenno.ai/register",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://api.fenno.ai",
@@ -224,7 +223,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "RunAPI",
-    websiteUrl: "https://runapi.host/",
+    websiteUrl: "https://runapi.host",
     apiKeyUrl: "https://runapi.host/register",
     settingsConfig: {
       env: {
@@ -239,8 +238,8 @@ export const providerPresets: ProviderPreset[] = [
   {
     name: "Shengsuanyun",
     nameKey: "providerForm.presets.shengsuanyun",
-    websiteUrl: "https://www.shengsuanyun.com/?from=CH_4HHXMRYF",
-    apiKeyUrl: "https://www.shengsuanyun.com/?from=CH_4HHXMRYF",
+    websiteUrl: "https://www.shengsuanyun.com",
+    apiKeyUrl: "https://www.shengsuanyun.com",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://router.shengsuanyun.com/api",
@@ -256,8 +255,8 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "AIGoCode",
-    websiteUrl: "https://aigocode.app/",
-    apiKeyUrl: "https://aigocode.app/invite/CC-SWITCH",
+    websiteUrl: "https://aigocode.app",
+    apiKeyUrl: "https://aigocode.app",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://api.aigocode.app",
@@ -287,7 +286,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "AICoding",
-    websiteUrl: "https://aicoding.inc/",
+    websiteUrl: "https://aicoding.inc",
     apiKeyUrl: "https://aicoding.inc/i/CCSWITCH",
     settingsConfig: {
       env: {
@@ -302,7 +301,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "SubRouter",
-    websiteUrl: "https://subrouter.ai/",
+    websiteUrl: "https://subrouter.ai",
     apiKeyUrl: "https://subrouter.ai/register",
     settingsConfig: {
       env: {
@@ -315,7 +314,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "APIKEY.FUN",
-    websiteUrl: "https://apikey.fun/",
+    websiteUrl: "https://apikey.fun",
     apiKeyUrl: "https://apikey.fun/register",
     settingsConfig: {
       env: {
@@ -330,7 +329,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "ClaudeAPI",
-    websiteUrl: "https://www.apito.ai/",
+    websiteUrl: "https://www.apito.ai",
     apiKeyUrl: "https://console.apito.ai/agent/register/pQBql2buaqiX3dDS",
     settingsConfig: {
       env: {
@@ -343,7 +342,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "Code0",
-    websiteUrl: "https://code0.ai/",
+    websiteUrl: "https://code0.ai",
     apiKeyUrl: "https://code0.ai/agent/register/B2XHxGjGmRvqgznY",
     settingsConfig: {
       env: {
@@ -356,8 +355,8 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "TeamoRouter",
-    websiteUrl: "https://teamorouter.cn/",
-    apiKeyUrl: "https://teamorouter.cn/",
+    websiteUrl: "https://teamorouter.cn",
+    apiKeyUrl: "https://teamorouter.cn",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://api.teamorouter.cn",
@@ -373,8 +372,8 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "PPIO",
-    websiteUrl: "https://ppio.com/",
-    apiKeyUrl: "https://ppio.com/activity/ccswitch",
+    websiteUrl: "https://ppio.com",
+    apiKeyUrl: "https://ppio.com",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://api.ppio.com/anthropic",
@@ -392,7 +391,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "ClaudeCN",
-    websiteUrl: "https://claudecn.top/",
+    websiteUrl: "https://claudecn.top",
     apiKeyUrl: "https://claudecn.ai/register",
     settingsConfig: {
       env: {
@@ -405,10 +404,8 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "火山 Agent Plan",
-    websiteUrl:
-      "https://www.volcengine.com/activity/agentplan?ac=MMAP8JTTCAQ2&rc=6J6FV5N2",
-    apiKeyUrl:
-      "https://www.volcengine.com/activity/agentplan?ac=MMAP8JTTCAQ2&rc=6J6FV5N2",
+    websiteUrl: "https://www.volcengine.com",
+    apiKeyUrl: "https://www.volcengine.com",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://ark.cn-beijing.volces.com/api/plan",
@@ -425,10 +422,8 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "火山 Coding Plan",
-    websiteUrl:
-      "https://www.volcengine.com/activity/codingplan?ac=MMAP8JTTCAQ2&rc=6J6FV5N2",
-    apiKeyUrl:
-      "https://www.volcengine.com/activity/codingplan?ac=MMAP8JTTCAQ2&rc=6J6FV5N2",
+    websiteUrl: "https://www.volcengine.com",
+    apiKeyUrl: "https://www.volcengine.com",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://ark.cn-beijing.volces.com/api/coding",
@@ -465,9 +460,9 @@ export const providerPresets: ProviderPreset[] = [
   {
     name: "DouBaoSeed",
     websiteUrl:
-      "https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey?apikey=%7B%7D",
+      "https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey",
     apiKeyUrl:
-      "https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey?apikey=%7B%7D",
+      "https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://ark.cn-beijing.volces.com/api/compatible",
@@ -485,7 +480,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "SiliconFlow",
-    websiteUrl: "https://siliconflow.cn/",
+    websiteUrl: "https://siliconflow.cn",
     apiKeyUrl: "https://cloud.siliconflow.cn/i/YflgU2Ve",
     settingsConfig: {
       env: {
@@ -503,7 +498,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "SiliconFlow en",
-    websiteUrl: "https://siliconflow.com/",
+    websiteUrl: "https://siliconflow.com",
     apiKeyUrl: "https://cloud.siliconflow.cn/i/YflgU2Ve",
     settingsConfig: {
       env: {
@@ -521,7 +516,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "A6API",
-    websiteUrl: "https://www.a6api.com/",
+    websiteUrl: "https://www.a6api.com",
     apiKeyUrl: "https://a6api.com/register",
     settingsConfig: {
       env: {
@@ -554,9 +549,8 @@ export const providerPresets: ProviderPreset[] = [
   {
     name: "Compshare",
     nameKey: "providerForm.presets.ucloud",
-    websiteUrl: "https://www.compshare.cn/",
-    apiKeyUrl:
-      "https://www.compshare.cn/coding-plan?ytag=GPU_YY_YX_git_cc-switch",
+    websiteUrl: "https://www.compshare.cn",
+    apiKeyUrl: "https://www.compshare.cn/coding-plan",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://api.modelverse.cn",
@@ -571,9 +565,8 @@ export const providerPresets: ProviderPreset[] = [
   {
     name: "Compshare Coding Plan",
     nameKey: "providerForm.presets.ucloudCoding",
-    websiteUrl: "https://www.compshare.cn/",
-    apiKeyUrl:
-      "https://www.compshare.cn/coding-plan?ytag=GPU_YY_YX_git_cc-switch",
+    websiteUrl: "https://www.compshare.cn",
+    apiKeyUrl: "https://www.compshare.cn/coding-plan",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://cp.compshare.cn",
@@ -587,7 +580,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "CCSub",
-    websiteUrl: "https://www.ccsub.net/",
+    websiteUrl: "https://www.ccsub.net",
     apiKeyUrl: "https://www.ccsub.net/register",
     settingsConfig: {
       env: {
@@ -600,7 +593,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "SSSAiCode",
-    websiteUrl: "https://sssaicodeapi.com/",
+    websiteUrl: "https://sssaicodeapi.com",
     apiKeyUrl: "https://sssaicodeapi.com/register",
     settingsConfig: {
       env: {
@@ -619,7 +612,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "Micu",
-    websiteUrl: "https://www.micuapi.ai/",
+    websiteUrl: "https://www.micuapi.ai",
     apiKeyUrl: "https://www.micuapi.ai/register",
     settingsConfig: {
       env: {
@@ -634,7 +627,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "RightCode",
-    websiteUrl: "https://www.rightapi.ai/",
+    websiteUrl: "https://www.rightapi.ai",
     apiKeyUrl: "https://www.rightapi.ai/register",
     settingsConfig: {
       env: {
@@ -648,8 +641,8 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "ETok.ai",
-    websiteUrl: "https://etok.ai/",
-    apiKeyUrl: "https://etok.ai/",
+    websiteUrl: "https://etok.ai",
+    apiKeyUrl: "https://etok.ai",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://api.etok.ai",
@@ -662,8 +655,8 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "Cubence",
-    websiteUrl: "https://cubence.com/",
-    apiKeyUrl: "https://cubence.com/signup?code=CCSWITCH&source=ccs",
+    websiteUrl: "https://cubence.com",
+    apiKeyUrl: "https://cubence.com/signup",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://api.cubence.com",
@@ -682,7 +675,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "CrazyRouter",
-    websiteUrl: "https://www.crazyrouter.com/",
+    websiteUrl: "https://www.crazyrouter.com",
     apiKeyUrl: "https://www.crazyrouter.com/register",
     settingsConfig: {
       env: {
@@ -697,8 +690,8 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "DMXAPI",
-    websiteUrl: "https://www.dmxapi.cn/",
-    apiKeyUrl: "https://www.dmxapi.cn/",
+    websiteUrl: "https://www.dmxapi.cn",
+    apiKeyUrl: "https://www.dmxapi.cn",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://www.dmxapi.cn",
@@ -711,7 +704,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "SudoCode.chat",
-    websiteUrl: "https://sudocode.chat/",
+    websiteUrl: "https://sudocode.chat",
     apiKeyUrl: "https://sudocode.chat/sign-up",
     settingsConfig: {
       env: {
@@ -726,8 +719,8 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "SudoCode.us",
-    websiteUrl: "https://sudocode.us/",
-    apiKeyUrl: "https://sudocode.us/",
+    websiteUrl: "https://sudocode.us",
+    apiKeyUrl: "https://sudocode.us",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://sudocode.us",
@@ -741,7 +734,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "XycAi",
-    websiteUrl: "https://xycai.us/",
+    websiteUrl: "https://xycai.us",
     apiKeyUrl: "https://xycai.us/register",
     // 说明：该供应商使用 ANTHROPIC_API_KEY（而非 ANTHROPIC_AUTH_TOKEN）
     apiKeyField: "ANTHROPIC_API_KEY",
@@ -758,8 +751,8 @@ export const providerPresets: ProviderPreset[] = [
   // ===== 非赞助商预设：应用内展示按显示名排序，此处文件顺序不影响展示 =====
   {
     name: "Amux",
-    websiteUrl: "https://amux.ai/",
-    apiKeyUrl: "https://amux.ai/",
+    websiteUrl: "https://amux.ai",
+    apiKeyUrl: "https://amux.ai",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://api.amux.ai",
@@ -792,7 +785,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "DeepSeek",
-    websiteUrl: "https://platform.deepseek.com/",
+    websiteUrl: "https://platform.deepseek.com",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://api.deepseek.com/anthropic",
@@ -835,8 +828,8 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "Zhipu GLM",
-    websiteUrl: "https://open.bigmodel.cn/",
-    apiKeyUrl: "https://www.bigmodel.cn/claude-code?ic=RRVJPB5SII",
+    websiteUrl: "https://open.bigmodel.cn",
+    apiKeyUrl: "https://www.bigmodel.cn/claude-code",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://open.bigmodel.cn/api/anthropic",
@@ -853,8 +846,8 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "Zhipu GLM en",
-    websiteUrl: "https://z.ai/",
-    apiKeyUrl: "https://z.ai/subscribe?ic=8JVLJQFSKB",
+    websiteUrl: "https://z.ai",
+    apiKeyUrl: "https://z.ai/subscribe",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://api.z.ai/api/anthropic",
@@ -916,7 +909,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "Bailian",
-    websiteUrl: "https://bailian.console.aliyun.com/",
+    websiteUrl: "https://bailian.console.aliyun.com",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://dashscope.aliyuncs.com/apps/anthropic",
@@ -929,7 +922,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "Bailian For Coding",
-    websiteUrl: "https://bailian.console.aliyun.com/",
+    websiteUrl: "https://bailian.console.aliyun.com",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL:
@@ -981,7 +974,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "ModelScope",
-    websiteUrl: "https://modelscope.cn/",
+    websiteUrl: "https://modelscope.cn",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://api-inference.modelscope.cn",
@@ -998,7 +991,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "KAT-Coder",
-    websiteUrl: "https://console.streamlake.ai/",
+    websiteUrl: "https://console.streamlake.ai",
     apiKeyUrl: "https://console.streamlake.ai/console/api-key",
     settingsConfig: {
       env: {
@@ -1045,7 +1038,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "MiniMax",
-    websiteUrl: "https://platform.minimaxi.com/",
+    websiteUrl: "https://platform.minimaxi.com",
     apiKeyUrl: "https://platform.minimaxi.com/subscribe/coding-plan",
     settingsConfig: {
       env: {
@@ -1069,7 +1062,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "MiniMax en",
-    websiteUrl: "https://platform.minimax.io/",
+    websiteUrl: "https://platform.minimax.io",
     apiKeyUrl: "https://platform.minimax.io/subscribe/coding-plan",
     settingsConfig: {
       env: {
@@ -1108,8 +1101,8 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "AiHubMix",
-    websiteUrl: "https://aihubmix.com/",
-    apiKeyUrl: "https://aihubmix.com/",
+    websiteUrl: "https://aihubmix.com",
+    apiKeyUrl: "https://aihubmix.com",
     // 说明：该供应商使用 ANTHROPIC_API_KEY（而非 ANTHROPIC_AUTH_TOKEN）
     apiKeyField: "ANTHROPIC_API_KEY",
     settingsConfig: {
@@ -1126,7 +1119,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "CherryIN",
-    websiteUrl: "https://open.cherryin.ai/",
+    websiteUrl: "https://open.cherryin.ai",
     apiKeyUrl: "https://open.cherryin.ai/console/token",
     settingsConfig: {
       env: {
@@ -1144,7 +1137,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "RelaxyCode",
-    websiteUrl: "https://www.relaxycode.com/",
+    websiteUrl: "https://www.relaxycode.com",
     apiKeyUrl: "https://www.relaxycode.com/register",
     settingsConfig: {
       env: {
@@ -1157,8 +1150,8 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "E-FlowCode",
-    websiteUrl: "https://e-flowcode.cc/",
-    apiKeyUrl: "https://e-flowcode.cc/",
+    websiteUrl: "https://e-flowcode.cc",
+    apiKeyUrl: "https://e-flowcode.cc",
     settingsConfig: {
       effortLevel: "high",
       env: {
@@ -1179,7 +1172,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "OpenRouter",
-    websiteUrl: "https://openrouter.ai/",
+    websiteUrl: "https://openrouter.ai",
     apiKeyUrl: "https://openrouter.ai/keys",
     settingsConfig: {
       env: {
@@ -1197,8 +1190,8 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "TheRouter",
-    websiteUrl: "https://therouter.ai/",
-    apiKeyUrl: "https://dashboard.therouter.ai/",
+    websiteUrl: "https://therouter.ai",
+    apiKeyUrl: "https://dashboard.therouter.ai",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://api.therouter.ai",
@@ -1215,8 +1208,8 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "Novita AI",
-    websiteUrl: "https://novita.ai/",
-    apiKeyUrl: "https://novita.ai/",
+    websiteUrl: "https://novita.ai",
+    apiKeyUrl: "https://novita.ai",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://api.novita.ai/anthropic",
@@ -1303,7 +1296,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "Nvidia",
-    websiteUrl: "https://build.nvidia.com/",
+    websiteUrl: "https://build.nvidia.com",
     apiKeyUrl: "https://build.nvidia.com/settings/api-keys",
     settingsConfig: {
       env: {
@@ -1322,7 +1315,7 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "PIPELLM",
-    websiteUrl: "https://code.pipellm.ai/",
+    websiteUrl: "https://code.pipellm.ai",
     apiKeyUrl: "https://code.pipellm.ai/login",
     settingsConfig: {
       env: {
@@ -1340,8 +1333,8 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "Xiaomi MiMo",
-    websiteUrl: "https://platform.xiaomimimo.com/",
-    apiKeyUrl: "https://platform.xiaomimimo.com/#/console/api-keys",
+    websiteUrl: "https://platform.xiaomimimo.com",
+    apiKeyUrl: "https://platform.xiaomimimo.com",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://api.xiaomimimo.com/anthropic",
@@ -1358,8 +1351,8 @@ export const providerPresets: ProviderPreset[] = [
   },
   {
     name: "Xiaomi MiMo Token Plan (China)",
-    websiteUrl: "https://platform.xiaomimimo.com/#/token-plan",
-    apiKeyUrl: "https://platform.xiaomimimo.com/#/console/plan-manage",
+    websiteUrl: "https://platform.xiaomimimo.com",
+    apiKeyUrl: "https://platform.xiaomimimo.com",
     settingsConfig: {
       env: {
         ANTHROPIC_BASE_URL: "https://token-plan-cn.xiaomimimo.com/anthropic",

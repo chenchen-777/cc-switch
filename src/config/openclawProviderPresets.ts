@@ -102,7 +102,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   // ===== 赞助商预设：文件顺序 = 应用内展示顺序，与 README 赞助商表对齐 =====
   {
     name: "Kimi",
-    websiteUrl: "https://platform.kimi.com/",
+    websiteUrl: "https://platform.kimi.com",
     apiKeyUrl: "https://platform.kimi.com/console/api-keys",
     settingsConfig: {
       baseUrl: "https://api.moonshot.cn/v1",
@@ -185,7 +185,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
 
   {
     name: "PackyCode",
-    websiteUrl: "https://www.packyapi.ai/",
+    websiteUrl: "https://www.packyapi.ai",
     apiKeyUrl: "https://www.packyapi.ai/register",
     settingsConfig: {
       baseUrl: "https://www.packyapi.ai",
@@ -228,7 +228,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "ZetaAPI",
-    websiteUrl: "https://zetaapi.ai/",
+    websiteUrl: "https://zetaapi.ai",
     apiKeyUrl: "https://zetaapi.ai/go/u117",
     settingsConfig: {
       baseUrl: "https://api.zetaapi.ai/v1",
@@ -262,7 +262,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "APINebula",
-    websiteUrl: "https://apinebula.ai/",
+    websiteUrl: "https://apinebula.ai",
     apiKeyUrl: "https://apinebula.ai/VjM74M",
     settingsConfig: {
       baseUrl: "https://apinebula.ai/v1",
@@ -292,7 +292,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "AICodeMirror",
-    websiteUrl: "https://www.aicodemirror.ai/",
+    websiteUrl: "https://www.aicodemirror.ai",
     apiKeyUrl: "https://www.aicodemirror.ai/register",
     settingsConfig: {
       baseUrl: "https://api.aicodemirror.ai/api/claudecode",
@@ -336,9 +336,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "FennoAI",
-    websiteUrl: "https://api.fenno.ai/",
-    apiKeyUrl:
-      "https://api.fenno.ai/register?redirect=%2Fpurchase%3Ftab%3Dsubscription%26group%3D16",
+    websiteUrl: "https://api.fenno.ai",
+    apiKeyUrl: "https://api.fenno.ai/register",
     settingsConfig: {
       baseUrl: "https://api.fenno.ai/v1",
       apiKey: "",
@@ -371,7 +370,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "RunAPI",
-    websiteUrl: "https://runapi.host/",
+    websiteUrl: "https://runapi.host",
     apiKeyUrl: "https://runapi.host/register",
     settingsConfig: {
       baseUrl: "https://runapi.host",
@@ -418,8 +417,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   {
     name: "Shengsuanyun",
     nameKey: "providerForm.presets.shengsuanyun",
-    websiteUrl: "https://www.shengsuanyun.com/?from=CH_4HHXMRYF",
-    apiKeyUrl: "https://www.shengsuanyun.com/?from=CH_4HHXMRYF",
+    websiteUrl: "https://www.shengsuanyun.com",
+    apiKeyUrl: "https://www.shengsuanyun.com",
     settingsConfig: {
       baseUrl: "https://router.shengsuanyun.com/api",
       apiKey: "",
@@ -461,8 +460,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "AIGoCode",
-    websiteUrl: "https://aigocode.app/",
-    apiKeyUrl: "https://aigocode.app/invite/CC-SWITCH",
+    websiteUrl: "https://aigocode.app",
+    apiKeyUrl: "https://aigocode.app",
     settingsConfig: {
       baseUrl: "https://api.aigocode.app",
       apiKey: "",
@@ -540,7 +539,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "AICoding",
-    websiteUrl: "https://aicoding.inc/",
+    websiteUrl: "https://aicoding.inc",
     apiKeyUrl: "https://aicoding.inc/i/CCSWITCH",
     settingsConfig: {
       baseUrl: "https://api.aicoding.inc",
@@ -584,7 +583,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "SubRouter",
-    websiteUrl: "https://subrouter.ai/",
+    websiteUrl: "https://subrouter.ai",
     apiKeyUrl: "https://subrouter.ai/register",
     settingsConfig: {
       baseUrl: "https://subrouter.ai/v1",
@@ -618,7 +617,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "APIKEY.FUN",
-    websiteUrl: "https://apikey.fun/",
+    websiteUrl: "https://apikey.fun",
     apiKeyUrl: "https://apikey.fun/register",
     settingsConfig: {
       baseUrl: "https://api.apikey.fun",
@@ -665,7 +664,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "Code0",
-    websiteUrl: "https://code0.ai/",
+    websiteUrl: "https://code0.ai",
     apiKeyUrl: "https://code0.ai/agent/register/B2XHxGjGmRvqgznY",
     settingsConfig: {
       baseUrl: "https://code0.ai/v1",
@@ -699,8 +698,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "TeamoRouter",
-    websiteUrl: "https://teamorouter.cn/",
-    apiKeyUrl: "https://teamorouter.cn/",
+    websiteUrl: "https://teamorouter.cn",
+    apiKeyUrl: "https://teamorouter.cn",
     settingsConfig: {
       baseUrl: "https://api.teamorouter.cn/v1",
       apiKey: "",
@@ -733,8 +732,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "PPIO",
-    websiteUrl: "https://ppio.com/",
-    apiKeyUrl: "https://ppio.com/activity/ccswitch",
+    websiteUrl: "https://ppio.com",
+    apiKeyUrl: "https://ppio.com",
     settingsConfig: {
       baseUrl: "https://api.ppio.com/openai/v1",
       apiKey: "",
@@ -772,7 +771,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "ClaudeCN",
-    websiteUrl: "https://claudecn.top/",
+    websiteUrl: "https://claudecn.top",
     apiKeyUrl: "https://claudecn.ai/register",
     settingsConfig: {
       baseUrl: "https://claudecn.top",
@@ -818,10 +817,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "火山 Agent Plan",
-    websiteUrl:
-      "https://www.volcengine.com/activity/agentplan?ac=MMAP8JTTCAQ2&rc=6J6FV5N2",
-    apiKeyUrl:
-      "https://www.volcengine.com/activity/agentplan?ac=MMAP8JTTCAQ2&rc=6J6FV5N2",
+    websiteUrl: "https://www.volcengine.com",
+    apiKeyUrl: "https://www.volcengine.com",
     settingsConfig: {
       baseUrl: "https://ark.cn-beijing.volces.com/api/plan/v3",
       apiKey: "",
@@ -853,10 +850,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "火山 Coding Plan",
-    websiteUrl:
-      "https://www.volcengine.com/activity/codingplan?ac=MMAP8JTTCAQ2&rc=6J6FV5N2",
-    apiKeyUrl:
-      "https://www.volcengine.com/activity/codingplan?ac=MMAP8JTTCAQ2&rc=6J6FV5N2",
+    websiteUrl: "https://www.volcengine.com",
+    apiKeyUrl: "https://www.volcengine.com",
     settingsConfig: {
       baseUrl: "https://ark.cn-beijing.volces.com/api/coding/v3",
       apiKey: "",
@@ -922,9 +917,9 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   {
     name: "DouBaoSeed",
     websiteUrl:
-      "https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey?apikey=%7B%7D",
+      "https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey",
     apiKeyUrl:
-      "https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey?apikey=%7B%7D",
+      "https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey",
     settingsConfig: {
       baseUrl: "https://ark.cn-beijing.volces.com/api/v3",
       apiKey: "",
@@ -957,7 +952,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "SiliconFlow",
-    websiteUrl: "https://siliconflow.cn/",
+    websiteUrl: "https://siliconflow.cn",
     apiKeyUrl: "https://cloud.siliconflow.cn/i/YflgU2Ve",
     settingsConfig: {
       baseUrl: "https://api.siliconflow.cn/v1",
@@ -991,7 +986,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "SiliconFlow en",
-    websiteUrl: "https://siliconflow.com/",
+    websiteUrl: "https://siliconflow.com",
     apiKeyUrl: "https://cloud.siliconflow.cn/i/YflgU2Ve",
     settingsConfig: {
       baseUrl: "https://api.siliconflow.com/v1",
@@ -1025,7 +1020,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "A6API",
-    websiteUrl: "https://www.a6api.com/",
+    websiteUrl: "https://www.a6api.com",
     apiKeyUrl: "https://a6api.com/register",
     settingsConfig: {
       baseUrl: "https://api.a6api.com/v1",
@@ -1090,9 +1085,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   {
     name: "Compshare",
     nameKey: "providerForm.presets.ucloud",
-    websiteUrl: "https://www.compshare.cn/",
-    apiKeyUrl:
-      "https://www.compshare.cn/coding-plan?ytag=GPU_YY_YX_git_cc-switch",
+    websiteUrl: "https://www.compshare.cn",
+    apiKeyUrl: "https://www.compshare.cn/coding-plan",
     settingsConfig: {
       baseUrl: "https://api.modelverse.cn/v1",
       apiKey: "",
@@ -1128,9 +1122,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   {
     name: "Compshare Coding Plan",
     nameKey: "providerForm.presets.ucloudCoding",
-    websiteUrl: "https://www.compshare.cn/",
-    apiKeyUrl:
-      "https://www.compshare.cn/coding-plan?ytag=GPU_YY_YX_git_cc-switch",
+    websiteUrl: "https://www.compshare.cn",
+    apiKeyUrl: "https://www.compshare.cn/coding-plan",
     settingsConfig: {
       baseUrl: "https://cp.compshare.cn/v1",
       apiKey: "",
@@ -1165,7 +1158,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "CCSub",
-    websiteUrl: "https://www.ccsub.net/",
+    websiteUrl: "https://www.ccsub.net",
     apiKeyUrl: "https://www.ccsub.net/register",
     settingsConfig: {
       baseUrl: "https://www.ccsub.net/v1",
@@ -1200,7 +1193,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "SSSAiCode",
-    websiteUrl: "https://sssaicodeapi.com/",
+    websiteUrl: "https://sssaicodeapi.com",
     apiKeyUrl: "https://sssaicodeapi.com/register",
     settingsConfig: {
       baseUrl: "https://node-hk.sssaicodeapi.com/api",
@@ -1244,7 +1237,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "Micu",
-    websiteUrl: "https://www.micuapi.ai/",
+    websiteUrl: "https://www.micuapi.ai",
     apiKeyUrl: "https://www.micuapi.ai/register",
     settingsConfig: {
       baseUrl: "https://www.micuapi.ai",
@@ -1280,7 +1273,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "RightCode",
-    websiteUrl: "https://www.rightapi.ai/",
+    websiteUrl: "https://www.rightapi.ai",
     apiKeyUrl: "https://www.rightapi.ai/register",
     settingsConfig: {
       baseUrl: "https://www.rightapi.ai/claude",
@@ -1324,8 +1317,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "ETok.ai",
-    websiteUrl: "https://etok.ai/",
-    apiKeyUrl: "https://etok.ai/",
+    websiteUrl: "https://etok.ai",
+    apiKeyUrl: "https://etok.ai",
     settingsConfig: {
       baseUrl: "https://api.etok.ai",
       apiKey: "",
@@ -1360,8 +1353,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "Cubence",
-    websiteUrl: "https://cubence.com/",
-    apiKeyUrl: "https://cubence.com/signup?code=CCSWITCH&source=ccs",
+    websiteUrl: "https://cubence.com",
+    apiKeyUrl: "https://cubence.com/signup",
     settingsConfig: {
       baseUrl: "https://api.cubence.com",
       apiKey: "",
@@ -1404,7 +1397,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "CrazyRouter",
-    websiteUrl: "https://www.crazyrouter.com/",
+    websiteUrl: "https://www.crazyrouter.com",
     apiKeyUrl: "https://www.crazyrouter.com/register",
     settingsConfig: {
       baseUrl: "https://cn.crazyrouter.com/v1",
@@ -1448,8 +1441,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "DMXAPI",
-    websiteUrl: "https://www.dmxapi.cn/",
-    apiKeyUrl: "https://www.dmxapi.cn/",
+    websiteUrl: "https://www.dmxapi.cn",
+    apiKeyUrl: "https://www.dmxapi.cn",
     settingsConfig: {
       baseUrl: "https://www.dmxapi.cn",
       apiKey: "",
@@ -1490,7 +1483,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "SudoCode.chat",
-    websiteUrl: "https://sudocode.chat/",
+    websiteUrl: "https://sudocode.chat",
     apiKeyUrl: "https://sudocode.chat/sign-up",
     settingsConfig: {
       baseUrl: "https://api.sudocode.chat/v1",
@@ -1520,8 +1513,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "SudoCode.us",
-    websiteUrl: "https://sudocode.us/",
-    apiKeyUrl: "https://sudocode.us/",
+    websiteUrl: "https://sudocode.us",
+    apiKeyUrl: "https://sudocode.us",
     settingsConfig: {
       baseUrl: "https://sudocode.us/v1",
       apiKey: "",
@@ -1550,7 +1543,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "XycAi",
-    websiteUrl: "https://xycai.us/",
+    websiteUrl: "https://xycai.us",
     apiKeyUrl: "https://xycai.us/register",
     settingsConfig: {
       baseUrl: "https://apicdn.xycai.us/v1",
@@ -1585,8 +1578,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   // ===== 非赞助商预设：应用内展示按显示名排序，此处文件顺序不影响展示 =====
   {
     name: "Amux",
-    websiteUrl: "https://amux.ai/",
-    apiKeyUrl: "https://amux.ai/",
+    websiteUrl: "https://amux.ai",
+    apiKeyUrl: "https://amux.ai",
     settingsConfig: {
       baseUrl: "https://api.amux.ai/v1",
       apiKey: "",
@@ -1619,7 +1612,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "DeepSeek",
-    websiteUrl: "https://platform.deepseek.com/",
+    websiteUrl: "https://platform.deepseek.com",
     apiKeyUrl: "https://platform.deepseek.com/api_keys",
     settingsConfig: {
       baseUrl: "https://api.deepseek.com/v1",
@@ -1663,8 +1656,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "Zhipu GLM",
-    websiteUrl: "https://open.bigmodel.cn/",
-    apiKeyUrl: "https://www.bigmodel.cn/claude-code?ic=RRVJPB5SII",
+    websiteUrl: "https://open.bigmodel.cn",
+    apiKeyUrl: "https://www.bigmodel.cn/claude-code",
     settingsConfig: {
       baseUrl: "https://open.bigmodel.cn/api/coding/paas/v4",
       apiKey: "",
@@ -1701,8 +1694,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "Zhipu GLM en",
-    websiteUrl: "https://z.ai/",
-    apiKeyUrl: "https://z.ai/subscribe?ic=8JVLJQFSKB",
+    websiteUrl: "https://z.ai",
+    apiKeyUrl: "https://z.ai/subscribe",
     settingsConfig: {
       baseUrl: "https://api.z.ai/api/coding/paas/v4",
       apiKey: "",
@@ -1786,8 +1779,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "Qwen Coder",
-    websiteUrl: "https://bailian.console.aliyun.com/",
-    apiKeyUrl: "https://bailian.console.aliyun.com/#/api-key",
+    websiteUrl: "https://bailian.console.aliyun.com",
+    apiKeyUrl: "https://bailian.console.aliyun.com",
     settingsConfig: {
       baseUrl: "https://dashscope.aliyuncs.com/compatible-mode/v1",
       apiKey: "",
@@ -1914,7 +1907,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "MiniMax",
-    websiteUrl: "https://platform.minimaxi.com/",
+    websiteUrl: "https://platform.minimaxi.com",
     apiKeyUrl: "https://platform.minimaxi.com/subscribe/coding-plan",
     settingsConfig: {
       baseUrl: "https://api.minimaxi.com/v1",
@@ -1950,7 +1943,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "MiniMax en",
-    websiteUrl: "https://platform.minimax.io/",
+    websiteUrl: "https://platform.minimax.io",
     apiKeyUrl: "https://platform.minimax.io/subscribe/coding-plan",
     settingsConfig: {
       baseUrl: "https://api.minimax.io/v1",
@@ -1986,7 +1979,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "KAT-Coder",
-    websiteUrl: "https://console.streamlake.ai/",
+    websiteUrl: "https://console.streamlake.ai",
     apiKeyUrl: "https://console.streamlake.ai/console/api-key",
     settingsConfig: {
       baseUrl:
@@ -2103,8 +2096,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "Xiaomi MiMo",
-    websiteUrl: "https://platform.xiaomimimo.com/",
-    apiKeyUrl: "https://platform.xiaomimimo.com/#/console/api-keys",
+    websiteUrl: "https://platform.xiaomimimo.com",
+    apiKeyUrl: "https://platform.xiaomimimo.com",
     settingsConfig: {
       baseUrl: "https://api.xiaomimimo.com/v1",
       apiKey: "",
@@ -2138,8 +2131,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "Xiaomi MiMo Token Plan (China)",
-    websiteUrl: "https://platform.xiaomimimo.com/#/token-plan",
-    apiKeyUrl: "https://platform.xiaomimimo.com/#/console/plan-manage",
+    websiteUrl: "https://platform.xiaomimimo.com",
+    apiKeyUrl: "https://platform.xiaomimimo.com",
     settingsConfig: {
       baseUrl: "https://token-plan-cn.xiaomimimo.com/v1",
       apiKey: "",
@@ -2188,8 +2181,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
 
   {
     name: "AiHubMix",
-    websiteUrl: "https://aihubmix.com/",
-    apiKeyUrl: "https://aihubmix.com/",
+    websiteUrl: "https://aihubmix.com",
+    apiKeyUrl: "https://aihubmix.com",
     settingsConfig: {
       baseUrl: "https://aihubmix.com",
       apiKey: "",
@@ -2232,7 +2225,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "CherryIN",
-    websiteUrl: "https://open.cherryin.ai/",
+    websiteUrl: "https://open.cherryin.ai",
     apiKeyUrl: "https://open.cherryin.ai/console/token",
     settingsConfig: {
       baseUrl: "https://open.cherryin.net",
@@ -2273,7 +2266,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "OpenRouter",
-    websiteUrl: "https://openrouter.ai/",
+    websiteUrl: "https://openrouter.ai",
     apiKeyUrl: "https://openrouter.ai/keys",
     settingsConfig: {
       baseUrl: "https://openrouter.ai/api/v1",
@@ -2317,8 +2310,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "TheRouter",
-    websiteUrl: "https://therouter.ai/",
-    apiKeyUrl: "https://dashboard.therouter.ai/",
+    websiteUrl: "https://therouter.ai",
+    apiKeyUrl: "https://dashboard.therouter.ai",
     settingsConfig: {
       baseUrl: "https://api.therouter.ai/v1",
       apiKey: "",
@@ -2383,7 +2376,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "ModelScope",
-    websiteUrl: "https://modelscope.cn/",
+    websiteUrl: "https://modelscope.cn",
     apiKeyUrl: "https://modelscope.cn/my/myaccesstoken",
     settingsConfig: {
       baseUrl: "https://api-inference.modelscope.cn/v1",
@@ -2421,8 +2414,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "Novita AI",
-    websiteUrl: "https://novita.ai/",
-    apiKeyUrl: "https://novita.ai/",
+    websiteUrl: "https://novita.ai",
+    apiKeyUrl: "https://novita.ai",
     settingsConfig: {
       baseUrl: "https://api.novita.ai/openai",
       apiKey: "",
@@ -2455,7 +2448,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "Nvidia",
-    websiteUrl: "https://build.nvidia.com/",
+    websiteUrl: "https://build.nvidia.com",
     apiKeyUrl: "https://build.nvidia.com/settings/api-keys",
     settingsConfig: {
       baseUrl: "https://integrate.api.nvidia.com/v1",
@@ -2487,7 +2480,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "PIPELLM",
-    websiteUrl: "https://code.pipellm.ai/",
+    websiteUrl: "https://code.pipellm.ai",
     apiKeyUrl: "https://code.pipellm.ai/login",
     settingsConfig: {
       baseUrl: "https://cc-api.pipellm.ai",
@@ -2537,8 +2530,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "E-FlowCode",
-    websiteUrl: "https://e-flowcode.cc/",
-    apiKeyUrl: "https://e-flowcode.cc/",
+    websiteUrl: "https://e-flowcode.cc",
+    apiKeyUrl: "https://e-flowcode.cc",
     settingsConfig: {
       api: "openai-responses",
       apiKey: "",

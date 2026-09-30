@@ -31,6 +31,9 @@ jobs:
       - name: Add macOS targets
         if: runner.os == 'macOS'
         run: rustup target add aarch64-apple-darwin x86_64-apple-darwin
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri -> target
       - run: pnpm install --frozen-lockfile
       - run: pnpm typecheck
       - run: pnpm exec vitest run tests/components/777NoPromotion.test.tsx
@@ -40,9 +43,9 @@ jobs:
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
         with:
-          tagName: 777-v3.20.1-777.1
-          releaseName: CC Switch 777 v3.20.1-777.1
-          releaseBody: 'Based on upstream v3.20.1. Removes partner promotion text, sponsorship badges and priority, and referral tracking. Custom updater source. Application/MSI version 3.20.7771. macOS DMG is universal (Apple and Intel).'
+          tagName: 777-v3.20.1-777.2
+          releaseName: CC Switch 777 v3.20.1-777.2
+          releaseBody: 'Based on upstream v3.20.1. Removes partner promotion text, sponsorship badges and priority, and referral tracking. Custom updater source. Application/MSI version 3.20.7772. macOS DMG is universal (Apple and Intel).'
           releaseDraft: true
           prerelease: false
           includeUpdaterJson: true
