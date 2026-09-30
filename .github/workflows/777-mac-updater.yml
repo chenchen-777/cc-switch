@@ -1,0 +1,51 @@
+name: Complete custom macOS updater
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing custom release tag
+        required: true
+        default: 777-v3.20.1-777.2
+permissions:
+  contents: write
+jobs:
+  updater:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag }}
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.12.3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pnpm install --frozen-lockfile
+      - name: Package and sign existing universal application
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG: ${{ inputs.tag }}
+          TAURI_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          [[ "$RELEASE_TAG" == 777-* ]] || exit 1
+          mkdir -p updater-input updater-output
+          gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --pattern '*_universal.dmg' --dir updater-input
+          dmg=$(find updater-input -name '*.dmg' -print -quit)
+          mount="$RUNNER_TEMP/cc-switch-mount"
+          mkdir -p "$mount"
+          hdiutil attach "$dmg" -nobrowse -readonly -mountpoint "$mount"
+          trap 'hdiutil detach "$mount" || true' EXIT
+          app=$(find "$mount" -maxdepth 1 -name '*.app' -print -quit)
+          test -n "$app"
+          appname=$(basename "$app")
+          ditto "$app" "updater-output/$appname"
+          hdiutil detach "$mount"
+          trap - EXIT
+          archive="$(basename "$dmg" .dmg).app.tar.gz"
+          tar -czf "updater-output/$archive" -C updater-output "$appname"
+          pnpm exec tauri signer sign "updater-output/$archive"
+          gh release upload "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" "updater-output/$archive" "updater-output/$archive.sig" --clobber

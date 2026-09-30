@@ -14,7 +14,7 @@ jobs:
           - os: windows-2022
             args: --bundles msi
           - os: macos-14
-            args: --target universal-apple-darwin --bundles dmg
+            args: --target universal-apple-darwin --bundles app,dmg
     runs-on: ${{ matrix.os }}
     env:
       CARGO_INCREMENTAL: '0'
