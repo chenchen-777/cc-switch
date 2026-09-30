@@ -231,7 +231,7 @@ describe("ProviderPresetSelector pure helpers", () => {
     ).toEqual(["alpha", "beta", "delta", "gamma"]);
   });
 
-  it("original 模式按「官方 → 尊享伙伴 → 赞助商 → 非赞助商」四段排序，前三组保序、末组按显示名，双重身份不重复", () => {
+  it("777 original 模式将官方置顶，其他按名称排序，不受赞助身份影响", () => {
     // 故意打乱传入顺序，验证：
     // - official 组置顶（officialOnly、officialPrime 按出现顺序）；
     // - 非官方且 primePartner 的预设次之（primeAndPartner）；
@@ -314,10 +314,10 @@ describe("ProviderPresetSelector pure helpers", () => {
     expect(getIds(sortPresetEntries(mixed, "original", t))).toEqual([
       "officialOnly",
       "officialPrime",
-      "primeAndPartner",
-      "partnerZeta",
       "partnerAlpha",
       "restAlpha",
+      "primeAndPartner",
+      "partnerZeta",
       "restZulu",
     ]);
   });

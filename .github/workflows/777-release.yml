@@ -1,0 +1,50 @@
+name: 777 custom release
+on:
+  push:
+    tags: ['777-*']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-2022
+            args: --bundles msi
+          - os: macos-14
+            args: --target universal-apple-darwin --bundles dmg
+    runs-on: ${{ matrix.os }}
+    env:
+      CARGO_INCREMENTAL: '0'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.12.3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: pnpm
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Add macOS targets
+        if: runner.os == 'macOS'
+        run: rustup target add aarch64-apple-darwin x86_64-apple-darwin
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm exec vitest run tests/components/777NoPromotion.test.tsx
+      - uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+        with:
+          tagName: 777-v3.20.1-777.1
+          releaseName: CC Switch 777 v3.20.1-777.1
+          releaseBody: 'Based on upstream v3.20.1. Removes partner promotion text, sponsorship badges and priority, and referral tracking. Custom updater source. Application/MSI version 3.20.7771. macOS DMG is universal (Apple and Intel).'
+          releaseDraft: true
+          prerelease: false
+          includeUpdaterJson: true
+          updaterJsonPreferNsis: false
+          args: ${{ matrix.args }}
