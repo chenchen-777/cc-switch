@@ -476,8 +476,7 @@ requires_openai_auth = true`,
   {
     name: "TeamoRouter",
     websiteUrl: "https://teamorouter.cn/",
-    apiKeyUrl:
-      "https://teamorouter.cn/",
+    apiKeyUrl: "https://teamorouter.cn/",
     category: "aggregator",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
@@ -605,10 +604,8 @@ requires_openai_auth = true`,
   },
   {
     name: "BytePlus",
-    websiteUrl:
-      "https://www.byteplus.com/en/product/modelark",
-    apiKeyUrl:
-      "https://www.byteplus.com/en/product/modelark",
+    websiteUrl: "https://www.byteplus.com/en/product/modelark",
+    apiKeyUrl: "https://www.byteplus.com/en/product/modelark",
     auth: generateThirdPartyAuth(""),
     config: generateThirdPartyConfig(
       "byteplus",
@@ -923,8 +920,7 @@ requires_openai_auth = true`,
   {
     name: "SudoCode.chat",
     websiteUrl: "https://sudocode.chat/",
-    apiKeyUrl:
-      "https://sudocode.chat/sign-up",
+    apiKeyUrl: "https://sudocode.chat/sign-up",
     category: "third_party",
     auth: generateThirdPartyAuth(""),
     config: `model_provider = "custom"
