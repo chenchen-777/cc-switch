@@ -1,6 +1,8 @@
 /**
  * OpenClaw provider presets configuration
  * OpenClaw uses models.providers structure with custom provider configs
+ * 费用为标准 USD / 百万 tokens 估算，优先使用供应商公布的单价。
+ * 套餐和中转参考价不包含订阅费用或账户折扣。
  */
 import type {
   ProviderCategory,
@@ -8,6 +10,7 @@ import type {
   OpenClawDefaultModel,
 } from "../types";
 import type { PresetTheme, TemplateValueConfig } from "./claudeProviderPresets";
+import type { PresetFamilyFields } from "./presetFamilies";
 
 /** Suggested default model configuration for a preset */
 export interface OpenClawSuggestedDefaults {
@@ -17,7 +20,7 @@ export interface OpenClawSuggestedDefaults {
   modelCatalog?: Record<string, { alias?: string }>;
 }
 
-export interface OpenClawProviderPreset {
+export interface OpenClawProviderPreset extends PresetFamilyFields {
   name: string;
   nameKey?: string; // i18n key for localized display name
   websiteUrl: string;
@@ -26,7 +29,7 @@ export interface OpenClawProviderPreset {
   settingsConfig: OpenClawProviderConfig;
   isOfficial?: boolean;
   isPartner?: boolean;
-  primePartner?: boolean; // 置顶合作伙伴（顶级）：徽章显示为心形
+  primePartner?: boolean; // 旧版的置顶合作伙伴标记；v7 起界面不再读取，新预设不写
   partnerPromotionKey?: string;
   category?: ProviderCategory;
   /** Template variable definitions */
@@ -99,10 +102,14 @@ export const openclawApiProtocols = [
  * OpenClaw provider presets list
  */
 export const openclawProviderPresets: OpenClawProviderPreset[] = [
-  // ===== 赞助商预设：文件顺序 = 应用内展示顺序，与 README 赞助商表对齐 =====
+  // ===== 赞助商预设：文件顺序与 README 赞助商表对齐（仅维护约定；应用内一律按显示名排序，不置顶）=====
   {
     name: "Kimi",
-    websiteUrl: "https://platform.kimi.com",
+    family: "kimi",
+    planKey: "payg",
+    regionKey: "cn",
+    websiteUrl:
+      "https://platform.kimi.com",
     apiKeyUrl: "https://platform.kimi.com/console/api-keys",
     settingsConfig: {
       baseUrl: "https://api.moonshot.cn/v1",
@@ -120,6 +127,24 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           name: "Kimi K3",
           contextWindow: 1048576,
           cost: { input: 3, output: 15, cacheRead: 0.3, cacheWrite: 0 },
+        },
+        {
+          id: "kimi-k2.7-code-highspeed",
+          name: "Kimi K2.7 Code HighSpeed",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 262144,
+          maxTokens: 262144,
+          cost: { input: 1.9, output: 8, cacheRead: 0.38 },
+        },
+        {
+          id: "kimi-k2.6",
+          name: "Kimi K2.6",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 262144,
+          maxTokens: 262144,
+          cost: { input: 0.95, output: 4, cacheRead: 0.16 },
         },
       ],
     },
@@ -147,7 +172,11 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   // API 开放平台海外/Global 变体：platform.kimi.ai + api.moonshot.ai 端点
   {
     name: "Kimi Global",
-    websiteUrl: "https://platform.kimi.ai",
+    family: "kimi",
+    planKey: "payg",
+    regionKey: "intl",
+    websiteUrl:
+      "https://platform.kimi.ai",
     apiKeyUrl: "https://platform.kimi.ai/console/api-keys",
     settingsConfig: {
       baseUrl: "https://api.moonshot.ai/v1",
@@ -165,6 +194,24 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           name: "Kimi K3",
           contextWindow: 1048576,
           cost: { input: 3, output: 15, cacheRead: 0.3, cacheWrite: 0 },
+        },
+        {
+          id: "kimi-k2.7-code-highspeed",
+          name: "Kimi K2.7 Code HighSpeed",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 262144,
+          maxTokens: 262144,
+          cost: { input: 1.9, output: 8, cacheRead: 0.38 },
+        },
+        {
+          id: "kimi-k2.6",
+          name: "Kimi K2.6",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 262144,
+          maxTokens: 262144,
+          cost: { input: 0.95, output: 4, cacheRead: 0.16 },
         },
       ],
     },
@@ -191,6 +238,9 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "Kimi For Coding",
+    family: "kimi",
+    planKey: "coding",
+    regionKey: "cn",
     websiteUrl: "https://www.kimi.com/code/",
     apiKeyUrl: "https://platform.kimi.com/console/api-keys",
     settingsConfig: {
@@ -230,6 +280,9 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   // 海外/Global 变体：kimi.ai/code + api.kimi.ai 端点，其余与国内版一致
   {
     name: "Kimi For Coding Global",
+    family: "kimi",
+    planKey: "coding",
+    regionKey: "intl",
     websiteUrl: "https://www.kimi.ai/code",
     apiKeyUrl: "https://www.kimi.ai/code",
     settingsConfig: {
@@ -280,13 +333,31 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "claude-opus-5",
           name: "Claude Opus 5",
           contextWindow: 1000000,
-          cost: { input: 5, output: 25 },
+          cost: { input: 5, output: 25, cacheRead: 0.5, cacheWrite: 6.25 },
         },
         {
           id: "claude-sonnet-5",
           name: "Claude Sonnet 5",
           contextWindow: 1000000,
-          cost: { input: 3, output: 15 },
+          cost: { input: 2, output: 10, cacheRead: 0.2, cacheWrite: 2.5 },
+        },
+        {
+          id: "claude-opus-5-5",
+          name: "Claude Opus 5.5",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1000000,
+          maxTokens: 128000,
+          cost: { input: 4, output: 20, cacheRead: 0.2, cacheWrite: 5 },
+        },
+        {
+          id: "claude-fable-5-1",
+          name: "Claude Fable 5.1",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1000000,
+          maxTokens: 128000,
+          cost: { input: 10, output: 50, cacheRead: 0.25, cacheWrite: 12.5 },
         },
       ],
     },
@@ -357,6 +428,15 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "gpt-5.6-sol",
           name: "GPT-5.6 Sol",
         },
+        {
+          id: "gpt-6-astra",
+          name: "GPT-6 Astra",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1050000,
+          maxTokens: 128000,
+          cost: { input: 10, output: 50, cacheRead: 1, cacheWrite: 12.5 },
+        },
       ],
     },
     category: "third_party",
@@ -387,13 +467,13 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "claude-opus-5",
           name: "Claude Opus 5",
           contextWindow: 1000000,
-          cost: { input: 5, output: 25 },
+          cost: { input: 5, output: 25, cacheRead: 0.5, cacheWrite: 6.25 },
         },
         {
           id: "claude-sonnet-5",
           name: "Claude Sonnet 5",
           contextWindow: 1000000,
-          cost: { input: 3, output: 15 },
+          cost: { input: 2, output: 10, cacheRead: 0.2, cacheWrite: 2.5 },
         },
       ],
     },
@@ -421,7 +501,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   {
     name: "FennoAI",
     websiteUrl: "https://api.fenno.ai",
-    apiKeyUrl: "https://api.fenno.ai/register",
+    apiKeyUrl:
+      "https://api.fenno.ai/register",
     settingsConfig: {
       baseUrl: "https://api.fenno.ai/v1",
       apiKey: "",
@@ -476,6 +557,24 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           name: "Claude Haiku 4.5",
           contextWindow: 200000,
         },
+        {
+          id: "claude-opus-5-5",
+          name: "Claude Opus 5.5",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1000000,
+          maxTokens: 128000,
+          cost: { input: 4, output: 20, cacheRead: 0.2, cacheWrite: 5 },
+        },
+        {
+          id: "claude-fable-5-1",
+          name: "Claude Fable 5.1",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1000000,
+          maxTokens: 128000,
+          cost: { input: 10, output: 50, cacheRead: 0.25, cacheWrite: 12.5 },
+        },
       ],
     },
     category: "aggregator",
@@ -512,13 +611,31 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "anthropic/claude-opus-5",
           name: "Claude Opus 5",
           contextWindow: 1000000,
-          cost: { input: 5, output: 25 },
+          cost: { input: 5, output: 25, cacheRead: 0.5, cacheWrite: 6.25 },
         },
         {
           id: "anthropic/claude-sonnet-5",
           name: "Claude Sonnet 5",
           contextWindow: 1000000,
-          cost: { input: 3, output: 15 },
+          cost: { input: 2, output: 10, cacheRead: 0.2, cacheWrite: 2.5 },
+        },
+        {
+          id: "anthropic/claude-opus-5.5",
+          name: "Claude Opus 5.5",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1000000,
+          maxTokens: 128000,
+          cost: { input: 4, output: 20, cacheRead: 0.2, cacheWrite: 5 },
+        },
+        {
+          id: "anthropic/claude-fable-5.1",
+          name: "Claude Fable 5.1",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1000000,
+          maxTokens: 128000,
+          cost: { input: 10, output: 50, cacheRead: 0.25, cacheWrite: 12.5 },
         },
       ],
     },
@@ -555,13 +672,13 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "claude-opus-5",
           name: "Claude Opus 5",
           contextWindow: 1000000,
-          cost: { input: 5, output: 25 },
+          cost: { input: 5, output: 25, cacheRead: 0.5, cacheWrite: 6.25 },
         },
         {
           id: "claude-sonnet-5",
           name: "Claude Sonnet 5",
           contextWindow: 1000000,
-          cost: { input: 3, output: 15 },
+          cost: { input: 2, output: 10, cacheRead: 0.2, cacheWrite: 2.5 },
         },
       ],
     },
@@ -597,9 +714,37 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
       api: "openai-completions",
       models: [
         {
-          id: "gpt-5.6-sol",
-          name: "GPT-5.6 Sol",
-          contextWindow: 400000,
+          id: "gpt-6-astra",
+          name: "GPT-6 Astra",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1050000,
+          maxTokens: 128000,
+          cost: { input: 10, output: 50, cacheRead: 1, cacheWrite: 12.5 },
+        },
+        {
+          id: "moonshotai/kimi-k3",
+          name: "Kimi K3",
+          contextWindow: 1048576,
+          maxTokens: 131072,
+          input: ["text", "image"],
+          reasoning: true,
+        },
+        {
+          id: "z-ai/glm-5.3",
+          name: "GLM-5.3",
+          reasoning: true,
+          input: ["text"],
+          contextWindow: 1048576,
+          maxTokens: 131072,
+        },
+        {
+          id: "z-ai/glm-5.3-flash",
+          name: "GLM-5.3-Flash",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1048576,
+          maxTokens: 131072,
         },
       ],
     },
@@ -614,10 +759,10 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
     },
     suggestedDefaults: {
       model: {
-        primary: "qiniu/gpt-5.6-sol",
+        primary: "qiniu/gpt-6-astra",
       },
       modelCatalog: {
-        "qiniu/gpt-5.6-sol": { alias: "GPT-5.6 Sol" },
+        "qiniu/gpt-6-astra": { alias: "GPT-6 Astra" },
       },
     },
   },
@@ -634,13 +779,13 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "claude-opus-5",
           name: "Claude Opus 5",
           contextWindow: 1000000,
-          cost: { input: 5, output: 25 },
+          cost: { input: 5, output: 25, cacheRead: 0.5, cacheWrite: 6.25 },
         },
         {
           id: "claude-sonnet-5",
           name: "Claude Sonnet 5",
           contextWindow: 1000000,
-          cost: { input: 3, output: 15 },
+          cost: { input: 2, output: 10, cacheRead: 0.2, cacheWrite: 2.5 },
         },
       ],
     },
@@ -678,6 +823,15 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "gpt-5.6-sol",
           name: "GPT-5.6 Sol",
           contextWindow: 400000,
+        },
+        {
+          id: "gpt-6-astra",
+          name: "GPT-6 Astra",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1050000,
+          maxTokens: 128000,
+          cost: { input: 10, output: 50, cacheRead: 1, cacheWrite: 12.5 },
         },
       ],
     },
@@ -798,6 +952,67 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
     },
   },
   {
+    name: "88API",
+    websiteUrl: "https://88api.ai",
+    apiKeyUrl: "https://88api.ai/sign-up",
+    settingsConfig: {
+      baseUrl: "https://api.88api.ai",
+      apiKey: "",
+      api: "anthropic-messages",
+      models: [
+        {
+          id: "claude-opus-5-5",
+          name: "Claude Opus 5.5",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1000000,
+          maxTokens: 128000,
+        },
+        {
+          id: "claude-sonnet-5-5",
+          name: "Claude Sonnet 5.5",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1000000,
+          maxTokens: 128000,
+        },
+        {
+          id: "claude-haiku-4-5",
+          name: "Claude Haiku 4.5",
+          contextWindow: 200000,
+        },
+        {
+          id: "claude-fable-5-1",
+          name: "Claude Fable 5.1",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1000000,
+          maxTokens: 128000,
+        },
+      ],
+    },
+    category: "aggregator",
+    icon: "88api",
+    templateValues: {
+      apiKey: {
+        label: "API Key",
+        placeholder: "",
+        editorValue: "",
+      },
+    },
+    suggestedDefaults: {
+      model: {
+        primary: "88api/claude-opus-5-5",
+        fallbacks: ["88api/claude-sonnet-5-5"],
+      },
+      modelCatalog: {
+        "88api/claude-opus-5-5": { alias: "Opus" },
+        "88api/claude-sonnet-5-5": { alias: "Sonnet" },
+        "88api/claude-haiku-4-5": { alias: "Haiku" },
+      },
+    },
+  },
+  {
     name: "APIKEY.FUN",
     websiteUrl: "https://apikey.fan",
     apiKeyUrl: "https://apikey.fan/register",
@@ -868,6 +1083,24 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           name: "Claude Haiku 4.5",
           contextWindow: 200000,
         },
+        {
+          id: "claude-opus-5-5",
+          name: "Claude Opus 5.5",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1000000,
+          maxTokens: 128000,
+          cost: { input: 4, output: 20, cacheRead: 0.2, cacheWrite: 5 },
+        },
+        {
+          id: "claude-fable-5-1",
+          name: "Claude Fable 5.1",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1000000,
+          maxTokens: 128000,
+          cost: { input: 10, output: 50, cacheRead: 0.25, cacheWrite: 12.5 },
+        },
       ],
     },
     category: "aggregator",
@@ -905,6 +1138,15 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           name: "GPT-5.6 Sol",
           contextWindow: 400000,
         },
+        {
+          id: "gpt-6-astra",
+          name: "GPT-6 Astra",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1050000,
+          maxTokens: 128000,
+          cost: { input: 10, output: 50, cacheRead: 1, cacheWrite: 12.5 },
+        },
       ],
     },
     category: "aggregator",
@@ -928,7 +1170,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   {
     name: "TeamoRouter",
     websiteUrl: "https://teamorouter.cn",
-    apiKeyUrl: "https://teamorouter.cn",
+    apiKeyUrl:
+      "https://teamorouter.cn",
     settingsConfig: {
       baseUrl: "https://api.teamorouter.cn/v1",
       apiKey: "",
@@ -1022,6 +1265,24 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           name: "Claude Haiku 4.5",
           contextWindow: 200000,
         },
+        {
+          id: "claude-opus-5-5",
+          name: "Claude Opus 5.5",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1000000,
+          maxTokens: 128000,
+          cost: { input: 4, output: 20, cacheRead: 0.2, cacheWrite: 5 },
+        },
+        {
+          id: "claude-fable-5-1",
+          name: "Claude Fable 5.1",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1000000,
+          maxTokens: 128000,
+          cost: { input: 10, output: 50, cacheRead: 0.25, cacheWrite: 12.5 },
+        },
       ],
     },
     category: "third_party",
@@ -1046,8 +1307,12 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "火山 Agent Plan",
-    websiteUrl: "https://www.volcengine.com",
-    apiKeyUrl: "https://www.volcengine.com",
+    family: "volcengine",
+    planKey: "agentPlan",
+    websiteUrl:
+      "https://www.volcengine.com",
+    apiKeyUrl:
+      "https://www.volcengine.com",
     settingsConfig: {
       baseUrl: "https://ark.cn-beijing.volces.com/api/plan/v3",
       apiKey: "",
@@ -1079,8 +1344,12 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "火山 Coding Plan",
-    websiteUrl: "https://www.volcengine.com",
-    apiKeyUrl: "https://www.volcengine.com",
+    family: "volcengine",
+    planKey: "codingPlan",
+    websiteUrl:
+      "https://www.volcengine.com",
+    apiKeyUrl:
+      "https://www.volcengine.com",
     settingsConfig: {
       baseUrl: "https://ark.cn-beijing.volces.com/api/coding/v3",
       apiKey: "",
@@ -1112,8 +1381,10 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "BytePlus",
-    websiteUrl: "https://www.byteplus.com/en/product/modelark",
-    apiKeyUrl: "https://www.byteplus.com/en/product/modelark",
+    websiteUrl:
+      "https://www.byteplus.com/en/product/modelark",
+    apiKeyUrl:
+      "https://www.byteplus.com/en/product/modelark",
     settingsConfig: {
       baseUrl: "https://ark.ap-southeast.bytepluses.com/api/coding/v3",
       apiKey: "",
@@ -1145,6 +1416,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "Volcengine Doubao",
+    family: "volcengine",
+    planKey: "payg",
     nameKey: "providerForm.presets.doubaoseed",
     websiteUrl:
       "https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey",
@@ -1182,6 +1455,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "SiliconFlow",
+    family: "siliconflow",
+    regionKey: "cn",
     websiteUrl: "https://siliconflow.cn",
     apiKeyUrl: "https://cloud.siliconflow.cn/i/YflgU2Ve",
     settingsConfig: {
@@ -1216,6 +1491,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "SiliconFlow en",
+    family: "siliconflow",
+    regionKey: "intl",
     websiteUrl: "https://siliconflow.com",
     apiKeyUrl: "https://cloud.siliconflow.cn/i/YflgU2Ve",
     settingsConfig: {
@@ -1262,6 +1539,15 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           name: "GPT-5.6 Sol",
           contextWindow: 400000,
         },
+        {
+          id: "gpt-6-astra",
+          name: "GPT-6 Astra",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1050000,
+          maxTokens: 128000,
+          cost: { input: 10, output: 50, cacheRead: 1, cacheWrite: 12.5 },
+        },
       ],
     },
     category: "aggregator",
@@ -1284,9 +1570,12 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "Compshare",
+    family: "compshare",
+    planKey: "payg",
     nameKey: "providerForm.presets.ucloud",
     websiteUrl: "https://www.compshare.cn",
-    apiKeyUrl: "https://www.compshare.cn/coding-plan",
+    apiKeyUrl:
+      "https://www.compshare.cn/coding-plan",
     settingsConfig: {
       baseUrl: "https://api.modelverse.cn/v1",
       apiKey: "",
@@ -1296,7 +1585,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "claude-opus-5",
           name: "Claude Opus 5",
           contextWindow: 1000000,
-          cost: { input: 5, output: 25 },
+          cost: { input: 5, output: 25, cacheRead: 0.5, cacheWrite: 6.25 },
         },
       ],
     },
@@ -1321,9 +1610,12 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "Compshare Coding Plan",
+    family: "compshare",
+    planKey: "codingPlan",
     nameKey: "providerForm.presets.ucloudCoding",
     websiteUrl: "https://www.compshare.cn",
-    apiKeyUrl: "https://www.compshare.cn/coding-plan",
+    apiKeyUrl:
+      "https://www.compshare.cn/coding-plan",
     settingsConfig: {
       baseUrl: "https://cp.compshare.cn/v1",
       apiKey: "",
@@ -1333,7 +1625,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "claude-opus-5",
           name: "Claude Opus 5",
           contextWindow: 1000000,
-          cost: { input: 5, output: 25 },
+          cost: { input: 5, output: 25, cacheRead: 0.5, cacheWrite: 6.25 },
         },
       ],
     },
@@ -1366,10 +1658,11 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
       api: "openai-completions",
       models: [
         {
-          id: "gpt-5.6-sol",
-          name: "GPT-5.6 Sol",
-          contextWindow: 400000,
-          cost: { input: 5, output: 15 },
+          id: "gpt-6-astra",
+          name: "GPT-6 Astra",
+          contextWindow: 1050000,
+          cost: { input: 10, output: 50, cacheRead: 1, cacheWrite: 12.5 },
+          maxTokens: 128000,
         },
       ],
     },
@@ -1384,10 +1677,10 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
     },
     suggestedDefaults: {
       model: {
-        primary: "ccsub/gpt-5.6-sol",
+        primary: "ccsub/gpt-6-astra",
       },
       modelCatalog: {
-        "ccsub/gpt-5.6-sol": { alias: "GPT-5.6 Sol" },
+        "ccsub/gpt-6-astra": { alias: "GPT-6 Astra" },
       },
     },
   },
@@ -1404,13 +1697,13 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "claude-opus-5",
           name: "Claude Opus 5",
           contextWindow: 1000000,
-          cost: { input: 5, output: 25 },
+          cost: { input: 5, output: 25, cacheRead: 0.5, cacheWrite: 6.25 },
         },
         {
           id: "claude-sonnet-5",
           name: "Claude Sonnet 5",
           contextWindow: 1000000,
-          cost: { input: 3, output: 15 },
+          cost: { input: 2, output: 10, cacheRead: 0.2, cacheWrite: 2.5 },
         },
       ],
     },
@@ -1495,7 +1788,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "claude-opus-5",
           name: "Claude Opus 5",
           contextWindow: 1000000,
-          cost: { input: 5, output: 25 },
+          cost: { input: 5, output: 25, cacheRead: 0.5, cacheWrite: 6.25 },
         },
       ],
     },
@@ -1531,13 +1824,13 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "claude-opus-5",
           name: "Claude Opus 5",
           contextWindow: 1000000,
-          cost: { input: 5, output: 25 },
+          cost: { input: 5, output: 25, cacheRead: 0.5, cacheWrite: 6.25 },
         },
         {
           id: "claude-sonnet-5",
           name: "Claude Sonnet 5",
           contextWindow: 1000000,
-          cost: { input: 3, output: 15 },
+          cost: { input: 2, output: 10, cacheRead: 0.2, cacheWrite: 2.5 },
         },
       ],
     },
@@ -1563,42 +1856,6 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
     },
   },
   {
-    name: "ETok.ai",
-    websiteUrl: "https://etok.ai",
-    apiKeyUrl: "https://etok.ai",
-    settingsConfig: {
-      baseUrl: "https://api.etok.ai",
-      apiKey: "",
-      api: "anthropic-messages",
-      models: [
-        {
-          id: "claude-opus-5",
-          name: "Claude Opus 5",
-          contextWindow: 1000000,
-          cost: { input: 5, output: 25 },
-        },
-      ],
-    },
-    category: "third_party",
-    icon: "etok",
-    iconColor: "#000000",
-    templateValues: {
-      apiKey: {
-        label: "API Key",
-        placeholder: "",
-        editorValue: "",
-      },
-    },
-    suggestedDefaults: {
-      model: {
-        primary: "etok/claude-opus-5",
-      },
-      modelCatalog: {
-        "etok/claude-opus-5": { alias: "Opus" },
-      },
-    },
-  },
-  {
     name: "Cubence",
     websiteUrl: "https://cubence.com",
     apiKeyUrl: "https://cubence.com/signup",
@@ -1611,13 +1868,13 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "claude-opus-5",
           name: "Claude Opus 5",
           contextWindow: 1000000,
-          cost: { input: 5, output: 25 },
+          cost: { input: 5, output: 25, cacheRead: 0.5, cacheWrite: 6.25 },
         },
         {
           id: "claude-sonnet-5",
           name: "Claude Sonnet 5",
           contextWindow: 1000000,
-          cost: { input: 3, output: 15 },
+          cost: { input: 2, output: 10, cacheRead: 0.2, cacheWrite: 2.5 },
         },
       ],
     },
@@ -1655,13 +1912,22 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "claude-opus-5",
           name: "Claude Opus 5",
           contextWindow: 1000000,
-          cost: { input: 5, output: 25 },
+          cost: { input: 5, output: 25, cacheRead: 0.5, cacheWrite: 6.25 },
         },
         {
           id: "claude-sonnet-5",
           name: "Claude Sonnet 5",
           contextWindow: 1000000,
-          cost: { input: 3, output: 15 },
+          cost: { input: 2, output: 10, cacheRead: 0.2, cacheWrite: 2.5 },
+        },
+        {
+          id: "claude-fable-5-1",
+          name: "Claude Fable 5.1",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1000000,
+          maxTokens: 128000,
+          cost: { input: 10, output: 50, cacheRead: 0.25, cacheWrite: 12.5 },
         },
       ],
     },
@@ -1699,13 +1965,13 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "claude-opus-5",
           name: "Claude Opus 5",
           contextWindow: 1000000,
-          cost: { input: 5, output: 25 },
+          cost: { input: 5, output: 25, cacheRead: 0.5, cacheWrite: 6.25 },
         },
         {
           id: "claude-sonnet-5",
           name: "Claude Sonnet 5",
           contextWindow: 1000000,
-          cost: { input: 3, output: 15 },
+          cost: { input: 2, output: 10, cacheRead: 0.2, cacheWrite: 2.5 },
         },
       ],
     },
@@ -1727,11 +1993,14 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
         "dmxapi/claude-sonnet-5": { alias: "Sonnet" },
       },
     },
+    icon: "dmxapi",
   },
   {
     name: "SudoCode.chat",
+    family: "sudocode",
     websiteUrl: "https://sudocode.chat",
-    apiKeyUrl: "https://sudocode.chat/sign-up",
+    apiKeyUrl:
+      "https://sudocode.chat/sign-up",
     settingsConfig: {
       baseUrl: "https://api.sudocode.chat/v1",
       apiKey: "",
@@ -1740,6 +2009,33 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
         {
           id: "gpt-5.6-sol",
           name: "GPT-5.6 Sol",
+        },
+        {
+          id: "gpt-6-sol",
+          name: "GPT-6 Sol",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1050000,
+          maxTokens: 128000,
+          cost: { input: 2, output: 10, cacheRead: 0.2, cacheWrite: 2.5 },
+        },
+        {
+          id: "gpt-6-luna",
+          name: "GPT-6 Luna",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1050000,
+          maxTokens: 128000,
+          cost: { input: 0.1, output: 0.5, cacheRead: 0.01, cacheWrite: 0.125 },
+        },
+        {
+          id: "gpt-6-astra",
+          name: "GPT-6 Astra",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1050000,
+          maxTokens: 128000,
+          cost: { input: 10, output: 50, cacheRead: 1, cacheWrite: 12.5 },
         },
       ],
     },
@@ -1760,6 +2056,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "SudoCode.us",
+    family: "sudocode",
     websiteUrl: "https://sudocode.us",
     apiKeyUrl: "https://sudocode.us",
     settingsConfig: {
@@ -1770,6 +2067,24 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
         {
           id: "gpt-5.6-sol",
           name: "GPT-5.6 Sol",
+        },
+        {
+          id: "gpt-6-sol",
+          name: "GPT-6 Sol",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1050000,
+          maxTokens: 128000,
+          cost: { input: 2, output: 10, cacheRead: 0.2, cacheWrite: 2.5 },
+        },
+        {
+          id: "gpt-6-astra",
+          name: "GPT-6 Astra",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1050000,
+          maxTokens: 128000,
+          cost: { input: 10, output: 50, cacheRead: 1, cacheWrite: 12.5 },
         },
       ],
     },
@@ -1802,6 +2117,15 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           name: "GPT-5.6 Sol",
           contextWindow: 400000,
         },
+        {
+          id: "gpt-6-astra",
+          name: "GPT-6 Astra",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1050000,
+          maxTokens: 128000,
+          cost: { input: 10, output: 50, cacheRead: 1, cacheWrite: 12.5 },
+        },
       ],
     },
     category: "aggregator",
@@ -1824,6 +2148,54 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   // ===== 非赞助商预设：应用内展示按显示名排序，此处文件顺序不影响展示 =====
   {
+    name: "Tu-zi",
+    nameKey: "providerForm.presets.tuzi",
+    websiteUrl: "https://api.tu-zi.com",
+    apiKeyUrl: "https://api.tu-zi.com/token",
+    settingsConfig: {
+      baseUrl: "https://api.tu-zi.com",
+      apiKey: "",
+      api: "anthropic-messages",
+      models: [
+        {
+          id: "claude-opus-5",
+          name: "Claude Opus 5",
+          contextWindow: 1000000,
+        },
+        {
+          id: "claude-sonnet-5",
+          name: "Claude Sonnet 5",
+          contextWindow: 1000000,
+        },
+        {
+          id: "claude-haiku-4-5",
+          name: "Claude Haiku 4.5",
+          contextWindow: 200000,
+        },
+      ],
+    },
+    category: "aggregator",
+    icon: "tuzi",
+    templateValues: {
+      apiKey: {
+        label: "API Key",
+        placeholder: "",
+        editorValue: "",
+      },
+    },
+    suggestedDefaults: {
+      model: {
+        primary: "tuzi/claude-opus-5",
+        fallbacks: ["tuzi/claude-sonnet-5"],
+      },
+      modelCatalog: {
+        "tuzi/claude-opus-5": { alias: "Opus" },
+        "tuzi/claude-sonnet-5": { alias: "Sonnet" },
+        "tuzi/claude-haiku-4-5": { alias: "Haiku" },
+      },
+    },
+  },
+  {
     name: "Amux",
     websiteUrl: "https://amux.ai",
     apiKeyUrl: "https://amux.ai",
@@ -1836,6 +2208,15 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "gpt-5.6-sol",
           name: "GPT-5.6 Sol",
           contextWindow: 400000,
+        },
+        {
+          id: "gpt-6-astra",
+          name: "GPT-6 Astra",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1050000,
+          maxTokens: 128000,
+          cost: { input: 10, output: 50, cacheRead: 1, cacheWrite: 12.5 },
         },
       ],
     },
@@ -1945,13 +2326,16 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "deepseek-v4-pro",
           name: "DeepSeek V4 Pro",
           contextWindow: 1000000,
-          cost: { input: 0.435, output: 0.87, cacheRead: 0.003625 },
+          cost: { input: 1.32, output: 3.96, cacheRead: 0.044, cacheWrite: 0 },
         },
         {
-          id: "deepseek-v4-flash",
-          name: "DeepSeek V4 Flash",
+          id: "deepseek-flash",
+          name: "DeepSeek V4.1 Flash",
           contextWindow: 1000000,
-          cost: { input: 0.14, output: 0.28 },
+          cost: { input: 0.3, output: 1.2, cacheRead: 0.006, cacheWrite: 0 },
+          input: ["text", "image"],
+          reasoning: true,
+          maxTokens: 384000,
         },
       ],
     },
@@ -1967,17 +2351,19 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
     },
     suggestedDefaults: {
       model: {
-        primary: "deepseek/deepseek-v4-flash",
+        primary: "deepseek/deepseek-flash",
         fallbacks: ["deepseek/deepseek-v4-pro"],
       },
       modelCatalog: {
-        "deepseek/deepseek-v4-flash": { alias: "Flash" },
+        "deepseek/deepseek-flash": { alias: "Flash" },
         "deepseek/deepseek-v4-pro": { alias: "Pro" },
       },
     },
   },
   {
     name: "Zhipu GLM",
+    family: "zhipu",
+    regionKey: "cn",
     websiteUrl: "https://open.bigmodel.cn",
     apiKeyUrl: "https://www.bigmodel.cn/claude-code",
     settingsConfig: {
@@ -1986,10 +2372,19 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
       api: "openai-completions",
       models: [
         {
-          id: "glm-5.1",
-          name: "GLM-5.1",
-          contextWindow: 128000,
+          id: "glm-5.3",
+          name: "GLM-5.3",
+          contextWindow: 1048576,
           cost: { input: 1.4, output: 4.4, cacheRead: 0.26 },
+        },
+        {
+          id: "glm-5.3-flash",
+          name: "GLM-5.3-Flash",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1048576,
+          maxTokens: 131072,
+          cost: { input: 0.15, output: 0.5, cacheRead: 0.03 },
         },
       ],
     },
@@ -2010,12 +2405,14 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
       },
     },
     suggestedDefaults: {
-      model: { primary: "zhipu/glm-5.1" },
-      modelCatalog: { "zhipu/glm-5.1": { alias: "GLM" } },
+      model: { primary: "zhipu/glm-5.3" },
+      modelCatalog: { "zhipu/glm-5.3": { alias: "GLM" } },
     },
   },
   {
     name: "Zhipu GLM en",
+    family: "zhipu",
+    regionKey: "intl",
     websiteUrl: "https://z.ai",
     apiKeyUrl: "https://z.ai/subscribe",
     settingsConfig: {
@@ -2024,10 +2421,19 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
       api: "openai-completions",
       models: [
         {
-          id: "glm-5.1",
-          name: "GLM-5.1",
-          contextWindow: 128000,
+          id: "glm-5.3",
+          name: "GLM-5.3",
+          contextWindow: 1048576,
           cost: { input: 1.4, output: 4.4, cacheRead: 0.26 },
+        },
+        {
+          id: "glm-5.3-flash",
+          name: "GLM-5.3-Flash",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1048576,
+          maxTokens: 131072,
+          cost: { input: 0.15, output: 0.5, cacheRead: 0.03 },
         },
       ],
     },
@@ -2048,8 +2454,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
       },
     },
     suggestedDefaults: {
-      model: { primary: "zhipu-en/glm-5.1" },
-      modelCatalog: { "zhipu-en/glm-5.1": { alias: "GLM" } },
+      model: { primary: "zhipu-en/glm-5.3" },
+      modelCatalog: { "zhipu-en/glm-5.3": { alias: "GLM" } },
     },
   },
   {
@@ -2062,6 +2468,9 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
     // minimax-m2.7/glm-5.1/glm-5.2/hy3 按平台模型列表页（1300/78934）补
     // maxTokens；hy3 reasoning:true 与 hy3-preview 一致（Preserved Thinking）
     name: "Tencent Token Plan",
+    family: "tencent",
+    planKey: "tokenPlan",
+    regionKey: "cn",
     websiteUrl: "https://cloud.tencent.com/product/tokenhub",
     apiKeyUrl: "https://console.cloud.tencent.com/tokenhub/tokenplan",
     settingsConfig: {
@@ -2189,6 +2598,9 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
     //（1823/130062）口径，cost 全零；kimi-k2.6 接入页未列，maxTokens 按
     // 平台模型列表页（1300/78934，256k）
     name: "Tencent Token Plan (Intl)",
+    family: "tencent",
+    planKey: "tokenPlan",
+    regionKey: "intl",
     websiteUrl: "https://www.tencentcloud.com/products/tokenhub",
     apiKeyUrl: "https://console.tencentcloud.com/tokenhub/tokenplan",
     settingsConfig: {
@@ -2286,6 +2698,9 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
     // 接入页口径（全 false）。kimi-k2.5 官方 2026-08-31 下线不收；
     // minimax-m2.5 官方已除名且平台计划下线，2026-09-07 从全部 app 移除
     name: "Tencent Token Plan Enterprise Pro",
+    family: "tencent",
+    planKey: "enterprisePro",
+    regionKey: "cn",
     websiteUrl: "https://cloud.tencent.com/product/tokenhub",
     apiKeyUrl: "https://console.cloud.tencent.com/tokenhub/tokenplan-e",
     settingsConfig: {
@@ -2485,6 +2900,9 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
     //（cost 全零）；接入页未列的 glm-5.3/deepseek-*-0731/-0813 按平台
     // 模型列表页（1300/78934）补 maxTokens、reasoning 随同族口径
     name: "Tencent Token Plan Enterprise Pro (Intl)",
+    family: "tencent",
+    planKey: "enterprisePro",
+    regionKey: "intl",
     websiteUrl: "https://www.tencentcloud.com/products/tokenhub",
     apiKeyUrl: "https://console.tencentcloud.com/tokenhub/tokenplan-e",
     settingsConfig: {
@@ -2632,6 +3050,9 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
     // Token Plan 企业版轻享套餐（1823/131173，2026-08-28 版）：仅 Auto 模型。
     // 条目照官方企业版 OpenClaw 接入页（1300/81503，Lite 块）原样
     name: "Tencent Token Plan Enterprise Lite",
+    family: "tencent",
+    planKey: "enterpriseLite",
+    regionKey: "cn",
     websiteUrl: "https://cloud.tencent.com/product/tokenhub",
     apiKeyUrl: "https://console.cloud.tencent.com/tokenhub/tokenplan-e",
     settingsConfig: {
@@ -2678,6 +3099,9 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
     // Global），仅 Auto 模型。条目照官方企业版 OpenClaw 接入页
     //（1300/81503，Lite 块）原样
     name: "Tencent Token Plan Enterprise Lite (Intl)",
+    family: "tencent",
+    planKey: "enterpriseLite",
+    regionKey: "intl",
     websiteUrl: "https://www.tencentcloud.com/products/tokenhub",
     apiKeyUrl: "https://console.tencentcloud.com/tokenhub/tokenplan-e",
     settingsConfig: {
@@ -2768,8 +3192,11 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "千问AI平台",
+    family: "qianwen",
+    planKey: "payg",
     websiteUrl: "https://platform.qianwenai.com",
-    apiKeyUrl: "https://platform.qianwenai.com/home/api-keys",
+    apiKeyUrl:
+      "https://platform.qianwenai.com/home/api-keys",
     settingsConfig: {
       baseUrl: "https://dashscope.aliyuncs.com/compatible-mode/v1",
       apiKey: "",
@@ -2805,8 +3232,12 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "千问AI平台 Token Plan",
-    websiteUrl: "https://platform.qianwenai.com/pricing/token-plan",
-    apiKeyUrl: "https://platform.qianwenai.com/home/api-keys",
+    family: "qianwen",
+    planKey: "tokenPlan",
+    websiteUrl:
+      "https://platform.qianwenai.com/pricing/token-plan",
+    apiKeyUrl:
+      "https://platform.qianwenai.com/home/api-keys",
     settingsConfig: {
       baseUrl: "https://token-plan.cn-beijing.maas.aliyuncs.com/apps/anthropic",
       apiKey: "",
@@ -2865,6 +3296,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   // 当白名单，漏写的模型会在客户端里被隐藏。
   {
     name: "QwenCloud",
+    family: "qwencloud",
+    planKey: "payg",
     websiteUrl: "https://home.qwencloud.com",
     apiKeyUrl: "https://home.qwencloud.com/api-keys",
     settingsConfig: {
@@ -2924,6 +3357,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "QwenCloud For Coding",
+    family: "qwencloud",
+    planKey: "coding",
     websiteUrl: "https://www.qwencloud.com",
     apiKeyUrl: "https://home.qwencloud.com/api-keys",
     settingsConfig: {
@@ -2983,7 +3418,10 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "QwenCloud Token Plan",
-    websiteUrl: "https://www.qwencloud.com/pricing/token-plan",
+    family: "qwencloud",
+    planKey: "tokenPlan",
+    websiteUrl:
+      "https://www.qwencloud.com/pricing/token-plan",
     apiKeyUrl: "https://home.qwencloud.com/api-keys",
     settingsConfig: {
       baseUrl:
@@ -3045,6 +3483,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "StepFun",
+    family: "stepfun",
+    regionKey: "cn",
     websiteUrl: "https://platform.stepfun.com/step-plan",
     apiKeyUrl: "https://platform.stepfun.com/interface-key",
     settingsConfig: {
@@ -3061,6 +3501,29 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "step-3.5-flash",
           name: "Step 3.5 Flash",
           contextWindow: 262144,
+        },
+        {
+          id: "step-3.7-flash",
+          name: "Step 3.7 Flash",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 256000,
+          maxTokens: 256000,
+          cost: { input: 0.19, output: 1.13, cacheRead: 0.04, cacheWrite: 0 },
+        },
+        {
+          id: "step-5-preview",
+          name: "Step 5 Preview",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1000000,
+          maxTokens: 64000,
+          cost: {
+            input: 0.98,
+            output: 2.8,
+            cacheRead: 0.05,
+            cacheWrite: 0,
+          },
         },
       ],
     },
@@ -3090,6 +3553,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "StepFun en",
+    family: "stepfun",
+    regionKey: "intl",
     websiteUrl: "https://platform.stepfun.ai/step-plan",
     apiKeyUrl: "https://platform.stepfun.ai/interface-key",
     settingsConfig: {
@@ -3106,6 +3571,29 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "step-3.5-flash",
           name: "Step 3.5 Flash",
           contextWindow: 262144,
+        },
+        {
+          id: "step-3.7-flash",
+          name: "Step 3.7 Flash",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 256000,
+          maxTokens: 256000,
+          cost: { input: 0.19, output: 1.13, cacheRead: 0.04, cacheWrite: 0 },
+        },
+        {
+          id: "step-5-preview",
+          name: "Step 5 Preview",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1000000,
+          maxTokens: 64000,
+          cost: {
+            input: 0.98,
+            output: 2.8,
+            cacheRead: 0.05,
+            cacheWrite: 0,
+          },
         },
       ],
     },
@@ -3135,6 +3623,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "MiniMax",
+    family: "minimax",
+    regionKey: "cn",
     websiteUrl: "https://platform.minimax.cn",
     apiKeyUrl: "https://platform.minimax.cn/subscribe/token-plan",
     settingsConfig: {
@@ -3149,6 +3639,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           input: ["text", "image"],
           contextWindow: 1000000,
           maxTokens: 131072,
+          cost: { input: 0.3, output: 1.2, cacheRead: 0.06, cacheWrite: 0 },
         },
       ],
     },
@@ -3173,6 +3664,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
   },
   {
     name: "MiniMax en",
+    family: "minimax",
+    regionKey: "intl",
     websiteUrl: "https://platform.minimax.io",
     apiKeyUrl: "https://platform.minimax.io/subscribe/coding-plan",
     settingsConfig: {
@@ -3187,6 +3680,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           input: ["text", "image"],
           contextWindow: 1000000,
           maxTokens: 131072,
+          cost: { input: 0.3, output: 1.2, cacheRead: 0.06, cacheWrite: 0 },
         },
       ],
     },
@@ -3326,9 +3820,12 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
       model: { primary: "bailing/Ling-2.6-1T" },
       modelCatalog: { "bailing/Ling-2.6-1T": { alias: "BaiLing" } },
     },
+    icon: "bailing",
   },
   {
     name: "Xiaomi MiMo",
+    family: "xiaomi-mimo",
+    planKey: "payg",
     websiteUrl: "https://platform.xiaomimimo.com",
     apiKeyUrl: "https://platform.xiaomimimo.com/#/console/api-keys",
     settingsConfig: {
@@ -3343,7 +3840,39 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           input: ["text"],
           contextWindow: 1048576,
           maxTokens: 131072,
-          cost: { input: 1, output: 3, cacheRead: 0.2, cacheWrite: 0 },
+          cost: {
+            input: 0.435,
+            output: 0.87,
+            cacheRead: 0.0036,
+            cacheWrite: 0,
+          },
+        },
+        {
+          id: "mimo-v2.6-pro",
+          name: "MiMo V2.6 Pro",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1048576,
+          maxTokens: 131072,
+          cost: { input: 0.435, output: 0.87, cacheRead: 0.0036 },
+        },
+        {
+          id: "mimo-v2.6-flash",
+          name: "MiMo V2.6 Flash",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1048576,
+          maxTokens: 131072,
+          cost: { input: 0.14, output: 0.28, cacheRead: 0.0028 },
+        },
+        {
+          id: "mimo-v2.6-pro-ultraspeed",
+          name: "MiMo V2.6 Pro UltraSpeed",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1048576,
+          maxTokens: 131072,
+          cost: { input: 4.35, output: 8.7, cacheRead: 0.036 },
         },
       ],
     },
@@ -3358,12 +3887,14 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
       },
     },
     suggestedDefaults: {
-      model: { primary: "xiaomimimo/mimo-v2.5-pro" },
-      modelCatalog: { "xiaomimimo/mimo-v2.5-pro": { alias: "MiMo" } },
+      model: { primary: "xiaomimimo/mimo-v2.6-pro" },
+      modelCatalog: { "xiaomimimo/mimo-v2.6-pro": { alias: "MiMo" } },
     },
   },
   {
     name: "Xiaomi MiMo Token Plan (China)",
+    family: "xiaomi-mimo",
+    planKey: "tokenPlan",
     websiteUrl: "https://platform.xiaomimimo.com/#/token-plan",
     apiKeyUrl: "https://platform.xiaomimimo.com/#/console/plan-manage",
     settingsConfig: {
@@ -3387,6 +3918,24 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           contextWindow: 1048576,
           maxTokens: 131072,
         },
+        {
+          id: "mimo-v2.6-pro",
+          name: "MiMo V2.6 Pro",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1048576,
+          maxTokens: 131072,
+          cost: { input: 0.435, output: 0.87, cacheRead: 0.0036 },
+        },
+        {
+          id: "mimo-v2.6-flash",
+          name: "MiMo V2.6 Flash",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1048576,
+          maxTokens: 131072,
+          cost: { input: 0.14, output: 0.28, cacheRead: 0.0028 },
+        },
       ],
     },
     category: "cn_official",
@@ -3400,9 +3949,9 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
       },
     },
     suggestedDefaults: {
-      model: { primary: "xiaomi-mimo-token-plan/mimo-v2.5-pro" },
+      model: { primary: "xiaomi-mimo-token-plan/mimo-v2.6-pro" },
       modelCatalog: {
-        "xiaomi-mimo-token-plan/mimo-v2.5-pro": {
+        "xiaomi-mimo-token-plan/mimo-v2.6-pro": {
           alias: "MiMo Token Plan (China)",
         },
         "xiaomi-mimo-token-plan/mimo-v2.5": {
@@ -3425,13 +3974,31 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "claude-opus-5",
           name: "Claude Opus 5",
           contextWindow: 1000000,
-          cost: { input: 5, output: 25 },
+          cost: { input: 5, output: 25, cacheRead: 0.5, cacheWrite: 6.25 },
         },
         {
           id: "claude-sonnet-5",
           name: "Claude Sonnet 5",
           contextWindow: 1000000,
-          cost: { input: 3, output: 15 },
+          cost: { input: 2, output: 10, cacheRead: 0.2, cacheWrite: 2.5 },
+        },
+        {
+          id: "claude-opus-5-5",
+          name: "Claude Opus 5.5",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1000000,
+          maxTokens: 128000,
+          cost: { input: 4, output: 20, cacheRead: 0.2, cacheWrite: 5 },
+        },
+        {
+          id: "claude-fable-5-1",
+          name: "Claude Fable 5.1",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1000000,
+          maxTokens: 128000,
+          cost: { input: 10, output: 50, cacheRead: 0.25, cacheWrite: 12.5 },
         },
       ],
     },
@@ -3475,6 +4042,15 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           name: "Claude Sonnet 5",
           contextWindow: 1000000,
         },
+        {
+          id: "anthropic/claude-fable-5.1",
+          name: "Claude Fable 5.1",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1000000,
+          maxTokens: 128000,
+          cost: { input: 10, output: 50, cacheRead: 0.25, cacheWrite: 12.5 },
+        },
       ],
     },
     category: "aggregator",
@@ -3510,13 +4086,41 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "anthropic/claude-opus-5",
           name: "Claude Opus 5",
           contextWindow: 1000000,
-          cost: { input: 5, output: 25 },
+          cost: { input: 5, output: 25, cacheRead: 0.5, cacheWrite: 6.25 },
         },
         {
           id: "anthropic/claude-sonnet-5",
           name: "Claude Sonnet 5",
           contextWindow: 1000000,
-          cost: { input: 3, output: 15 },
+          cost: {
+            input: 2,
+            output: 10,
+            cacheRead: 0.2,
+            cacheWrite: 2.5,
+          },
+        },
+        {
+          id: "anthropic/claude-opus-5.5",
+          name: "Claude Opus 5.5",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1000000,
+          maxTokens: 128000,
+          cost: {
+            input: 4,
+            output: 20,
+            cacheRead: 0.2,
+            cacheWrite: 5,
+          },
+        },
+        {
+          id: "anthropic/claude-fable-5.1",
+          name: "Claude Fable 5.1",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1000000,
+          maxTokens: 128000,
+          cost: { input: 10, output: 50, cacheRead: 0.25, cacheWrite: 12.5 },
         },
       ],
     },
@@ -3554,7 +4158,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "anthropic/claude-sonnet-5",
           name: "Claude Sonnet 5",
           contextWindow: 1000000,
-          cost: { input: 3, output: 15, cacheRead: 0.3, cacheWrite: 3.75 },
+          cost: { input: 2, output: 10, cacheRead: 0.2, cacheWrite: 2.5 },
         },
         {
           id: "openai/gpt-5.3-codex",
@@ -3606,6 +4210,7 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
         "therouter/qwen/qwen3-coder-480b": { alias: "Qwen Coder" },
       },
     },
+    icon: "therouter",
   },
   {
     name: "ModelScope",
@@ -3658,7 +4263,34 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "zai-org/glm-5.1",
           name: "GLM-5.1",
           contextWindow: 202800,
-          cost: { input: 1, output: 3.2, cacheRead: 0.2 },
+          cost: { input: 1.38, output: 4.4, cacheRead: 0.26, cacheWrite: 0 },
+        },
+        {
+          id: "zai-org/glm-5.3",
+          name: "GLM-5.3",
+          reasoning: true,
+          input: ["text"],
+          contextWindow: 1048576,
+          maxTokens: 131072,
+          cost: { input: 1.4, output: 4.4, cacheRead: 0.26, cacheWrite: 0 },
+        },
+        {
+          id: "zai-org/glm-5.3-flash",
+          name: "GLM-5.3-Flash",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1048576,
+          maxTokens: 131072,
+          cost: { input: 0.15, output: 0.5, cacheRead: 0.03, cacheWrite: 0 },
+        },
+        {
+          id: "moonshotai/kimi-k3",
+          name: "Kimi K3",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1048576,
+          maxTokens: 131072,
+          cost: { input: 3, output: 15, cacheRead: 0.3, cacheWrite: 0 },
         },
       ],
     },
@@ -3689,10 +4321,28 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
       api: "openai-completions",
       models: [
         {
-          id: "moonshotai/kimi-k2.5",
-          name: "Kimi K2.5",
-          contextWindow: 131072,
-          cost: { input: 0.6, output: 3, cacheRead: 0.1 },
+          id: "moonshotai/kimi-k3",
+          name: "Kimi K3",
+          contextWindow: 1048576,
+          maxTokens: 131072,
+          input: ["text", "image"],
+          reasoning: true,
+        },
+        {
+          id: "z-ai/glm-5.3",
+          name: "GLM-5.3",
+          reasoning: true,
+          input: ["text"],
+          contextWindow: 1048576,
+          maxTokens: 131072,
+        },
+        {
+          id: "z-ai/glm-5.3-flash",
+          name: "GLM-5.3-Flash",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1048576,
+          maxTokens: 131072,
         },
       ],
     },
@@ -3707,8 +4357,8 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
       },
     },
     suggestedDefaults: {
-      model: { primary: "nvidia/moonshotai/kimi-k2.5" },
-      modelCatalog: { "nvidia/moonshotai/kimi-k2.5": { alias: "Kimi" } },
+      model: { primary: "nvidia/moonshotai/kimi-k3" },
+      modelCatalog: { "nvidia/moonshotai/kimi-k3": { alias: "Kimi" } },
     },
   },
   {
@@ -3724,13 +4374,13 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "claude-opus-5",
           name: "claude-opus-5",
           contextWindow: 1000000,
-          cost: { input: 5, output: 25 },
+          cost: { input: 5, output: 25, cacheRead: 0.5, cacheWrite: 6.25 },
         },
         {
           id: "claude-sonnet-5",
           name: "claude-sonnet-5",
           contextWindow: 1000000,
-          cost: { input: 3, output: 15 },
+          cost: { input: 2, output: 10, cacheRead: 0.2, cacheWrite: 2.5 },
         },
         {
           id: "claude-haiku-4-5-20251001",
@@ -3797,6 +4447,24 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
         {
           id: "gpt-5.2",
           name: "gpt-5.2",
+        },
+        {
+          id: "gpt-6-sol",
+          name: "GPT-6 Sol",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1050000,
+          maxTokens: 128000,
+          cost: { input: 2, output: 10, cacheRead: 0.2, cacheWrite: 2.5 },
+        },
+        {
+          id: "gpt-6-astra",
+          name: "GPT-6 Astra",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1050000,
+          maxTokens: 128000,
+          cost: { input: 10, output: 50, cacheRead: 1, cacheWrite: 12.5 },
         },
       ],
     },
@@ -3872,7 +4540,26 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           input: ["text", "image"],
           contextWindow: 1000000,
           maxTokens: 128000,
-          cost: { input: 10, output: 50 },
+          cost: { input: 10, output: 50, cacheRead: 1, cacheWrite: 12.5 },
+        },
+        {
+          id: "claude-opus-5-5",
+          name: "Claude Opus 5.5",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1000000,
+          maxTokens: 128000,
+          // 供应商未公布缓存写入价，按 Anthropic 标准参考价估算。
+          cost: { input: 4, output: 20, cacheRead: 0.2, cacheWrite: 5 },
+        },
+        {
+          id: "claude-fable-5-1",
+          name: "Claude Fable 5.1",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1000000,
+          maxTokens: 128000,
+          cost: { input: 10, output: 50, cacheRead: 0.25, cacheWrite: 12.5 },
         },
       ],
     },
@@ -3906,6 +4593,24 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
           id: "gpt-5.6-sol",
           name: "GPT-5.6 Sol",
         },
+        {
+          id: "gpt-6-sol",
+          name: "GPT-6 Sol",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1050000,
+          maxTokens: 128000,
+          cost: { input: 2, output: 10, cacheRead: 0.2, cacheWrite: 2.5 },
+        },
+        {
+          id: "gpt-6-astra",
+          name: "GPT-6 Astra",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 1050000,
+          maxTokens: 128000,
+          cost: { input: 10, output: 50, cacheRead: 1, cacheWrite: 12.5 },
+        },
       ],
     },
     category: "aggregator",
@@ -3922,6 +4627,68 @@ export const openclawProviderPresets: OpenClawProviderPreset[] = [
       model: { primary: "aicodewith/gpt-5.6-sol" },
       modelCatalog: {
         "aicodewith/gpt-5.6-sol": { alias: "GPT-5.6 Sol" },
+      },
+    },
+  },
+  {
+    name: "模力方舟",
+    websiteUrl: "https://moark.com",
+    apiKeyUrl: "https://moark.com/dashboard/tokens",
+    settingsConfig: {
+      baseUrl: "https://api.moark.com/v1",
+      apiKey: "",
+      api: "openai-completions",
+      models: [
+        {
+          id: "deepseek-v4-flash-0731",
+          name: "DeepSeek V4 Flash",
+          reasoning: true,
+          contextWindow: 1000000,
+          maxTokens: 384000,
+        },
+        {
+          id: "DeepSeek-V4-Pro",
+          name: "DeepSeek V4 Pro",
+          reasoning: true,
+          contextWindow: 1000000,
+          maxTokens: 384000,
+        },
+        {
+          id: "GLM-5.3",
+          name: "GLM-5.3",
+          reasoning: true,
+          contextWindow: 1048576,
+          maxTokens: 131072,
+        },
+        {
+          id: "Kimi-K2.7-Code",
+          name: "Kimi K2.7 Code",
+          reasoning: true,
+          input: ["text", "image"],
+          contextWindow: 262144,
+          maxTokens: 262144,
+        },
+        {
+          id: "qwen3-coder-plus",
+          name: "Qwen3 Coder Plus",
+          contextWindow: 1000000,
+          maxTokens: 65536,
+        },
+      ],
+    },
+    category: "aggregator",
+    icon: "moark",
+    templateValues: {
+      apiKey: {
+        label: "API Key",
+        placeholder: "sk-...",
+        editorValue: "",
+      },
+    },
+    suggestedDefaults: {
+      model: { primary: "moark/deepseek-v4-flash-0731" },
+      modelCatalog: {
+        "moark/deepseek-v4-flash-0731": { alias: "DeepSeek V4 Flash" },
       },
     },
   },

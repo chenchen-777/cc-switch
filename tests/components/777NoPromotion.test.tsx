@@ -2,8 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { ApiKeySection } from "@/components/providers/forms/shared/ApiKeySection";
 import {
-  sortPresetEntries,
-  PresetSortMode,
+  getVisiblePresetEntries,
 } from "@/components/providers/forms/ProviderPresetSelector";
 vi.mock("react-i18next", () => ({
   useTranslation: () => ({ t: (key: string) => key }),
@@ -41,11 +40,11 @@ describe("777 distribution marketing policy", () => {
       },
       { id: "a", preset: { name: "A provider", category: "aggregator" } },
       { id: "official", preset: { name: "Official", category: "official" } },
-    ] as Parameters<typeof sortPresetEntries>[0];
+    ] as Parameters<typeof getVisiblePresetEntries>[0];
     expect(
-      sortPresetEntries(entries, PresetSortMode.Original, (k) => k).map(
+      getVisiblePresetEntries(entries, {query: "", t: (k) => k}).map(
         (e) => e.id,
       ),
-    ).toEqual(["official", "a", "z"]);
+    ).toEqual(["a", "official", "z"]);
   });
 });
