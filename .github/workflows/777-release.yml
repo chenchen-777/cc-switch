@@ -45,7 +45,7 @@ jobs:
         with:
           tagName: ${{ github.ref_name }}
           releaseName: CC Switch 777 ${{ github.ref_name }}
-          releaseBody: 'Based on upstream v4.0.5. Removes partner promotion text, sponsorship badges and priority, and referral tracking. Custom updater source. Application/MSI version 4.0.7774. macOS DMG is universal (Apple and Intel).'
+          releaseBody: 'Based on upstream v4.0.9. Removes partner promotion text, sponsorship badges and priority, and referral tracking. Custom updater source. Application/MSI version 4.0.7775. macOS DMG is universal (Apple and Intel).'
           releaseDraft: true
           prerelease: false
           includeUpdaterJson: true
